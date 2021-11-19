@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+}
+
+a:link, a:visited {
+ text-decoration: none;
+}
+
+header {
+    width: 100%;
+    background-color: lightgrey;
+}
+
+nav {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 15px;
+    font-size: 2em;
+    width: 10%;
+    align-self: flex-start;
+}
+
+.navbar{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;;
+}
+
+
+.navbar-item {
+  margin: 10px;
+  margin-right: 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5em;
+}
+
+footer{
+    background-color: lightgrey;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.blog-list{
+    margin: 50px;
+    list-style-type: none;
+}
+
+.blog-body{
+    margin: 50px;
+}
+
+////Stars
+#stars-container {
+    height: 100%;
+    width: 100%;
+    background: #000000;
+}
