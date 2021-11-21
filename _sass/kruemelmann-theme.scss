@@ -1,5 +1,7 @@
-body{
+body, html {
     margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 a:link, a:visited {
@@ -42,7 +44,7 @@ nav {
 
 footer{
     background-color: lightgrey;
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -60,7 +62,8 @@ footer{
 
 ////Stars
 #stars-container {
-    height: 100%;
-    width: 100%;
+    position: absolute;
     background: #000000;
+    width: 100%;
+    height: calc(100% - 150px);
 }

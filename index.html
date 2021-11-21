@@ -9,4 +9,21 @@ title: kruemelmann's website
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/assets/js/stars.js"></script>
+<script src="/assets/js/dot.js"></script>
+
+<!-- Scripts(wasm) -->
+<script type="text/javascript" src="/assets/js/wasm_exec.js"></script>
+<script type="text/javascript">
+    async function run(fileUrl) {
+        try {
+            const file = await fetch(fileUrl);
+            const buffer = await file.arrayBuffer();
+            const go = new Go();
+            const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
+            go.run(instance);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    setTimeout(() => run("/assets/js/game.wasm"));
+</script>
