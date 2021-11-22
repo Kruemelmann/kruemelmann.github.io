@@ -1,6 +1,6 @@
 var dotMargin = 25
-var numRows = 10
-var numCols = 40
+var numRows = 30
+var numCols = 30
 // Set the colors you want to support in this array
 var colors = ["#F03C69", "#FFCD32", "#2BAD5D", "#2ABABF", "#CDDC28", "#B91E8C"]
 var directions = ["+", "-"]
