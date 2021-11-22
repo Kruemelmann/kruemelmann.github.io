@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
 	"syscall/js"
 	"time"
 )
@@ -19,44 +20,57 @@ type Point struct {
 	x, y float64
 }
 
+type Ball struct {
+	Pos   Point
+	Color string
+}
+
 func main() {
 	ctx := setup()
 	fmt.Println("Setup finished")
 	resetBackground(ctx, "black")
 
 	//starting point
-	velocity := 3.0
-	rad := 25.0
+	velocity := 10.0
+	rad := 10.0
 	spoint := Point{x: rad + 1, y: rad + 1}
 
 	moveX := math.Cos(math.Pi/180*rad) * velocity
 	moveY := math.Sin(math.Pi/180*rad) * velocity
-	ball := Point{x: spoint.x, y: spoint.y}
+	ball := Ball{
+		Pos:   Point{x: spoint.x, y: spoint.y},
+		Color: randomColor(),
+	}
 
-	fmt.Println("Running")
 	//animation loop
 	for {
 		resetBackground(ctx, "black")
 
-		if ball.x > (canvasSize.w-rad) || ball.x < rad {
-			//moveX = math.Acos(math.Pi/180) * velocity
+		if ball.Pos.x > (canvasSize.w-rad) || ball.Pos.x < rad {
+			ball.Color = randomColor()
 			moveX = -moveX
 		}
-		if ball.y > (canvasSize.h-rad) || ball.y < rad {
-			//moveY = math.Asin(math.Pi/180) * velocity
+		if ball.Pos.y > (canvasSize.h-rad) || ball.Pos.y < rad {
+			ball.Color = randomColor()
 			moveY = -moveY
 		}
-		ball.x += moveX
-		ball.y += moveY
+		ball.Pos.x += moveX
+		ball.Pos.y += moveY
 
 		ctx.Call("beginPath")
-		ctx.Set("fillStyle", "red")
-		ctx.Call("arc", ball.x, ball.y, rad, 0, math.Pi*2, false)
+		ctx.Set("fillStyle", ball.Color)
+		ctx.Call("arc", ball.Pos.x, ball.Pos.y, rad, 0, math.Pi*2, false)
 		ctx.Call("fill")
 		ctx.Call("closePath")
 
 		time.Sleep(100 * time.Microsecond)
 	}
+}
+
+var colors = []string{"red", "green", "yellow", "purple", "blue"}
+
+func randomColor() string {
+	return colors[rand.Intn(len(colors))]
 }
 
 func setup() js.Value {
