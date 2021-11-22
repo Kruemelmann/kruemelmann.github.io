@@ -7,23 +7,23 @@ title: kruemelmann's website
 <canvas id="stars-container">
 </canvas>
 
-<!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--<script src="assets/js/dot.js"></script>-->
+<!-- import wasm scripts -->
+{% include wasm.html %}
 
-<!-- Scripts(wasm) -->
-<script type="text/javascript" src="assets/js/wasm_exec.js"></script>
-<script type="text/javascript">
-    async function run(fileUrl) {
-        try {
-            const file = await fetch(fileUrl);
-            const buffer = await file.arrayBuffer();
-            const go = new Go();
-            const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
-            go.run(instance);
-        } catch (err) {
-            console.error(err);
-        }
-    }
-    setTimeout(() => run("assets/js/game.wasm"));
-</script>
+
+<div>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+
+<div>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+
+<div>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+
+<div>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+

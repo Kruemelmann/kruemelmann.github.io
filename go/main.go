@@ -32,7 +32,7 @@ func main() {
 
 	//starting point
 	velocity := 10.0
-	rad := 10.0
+	rad := 25.0
 	spoint := Point{x: rad + 1, y: rad + 1}
 
 	moveX := math.Cos(math.Pi/180*rad) * velocity
