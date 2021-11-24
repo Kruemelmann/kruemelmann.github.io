@@ -4,9 +4,9 @@
 <script type="text/javascript">
     async function run(fileUrl) {
         const file = await fetch(fileUrl);
+        const buffer = await file.arrayBuffer();
+        const go = new Go();
         try {
-            const buffer = await file.arrayBuffer();
-            const go = new Go();
             const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
             go.run(instance);
         } catch (err) {
