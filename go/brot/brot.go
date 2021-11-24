@@ -45,8 +45,8 @@ func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 			var c complex128 = complex(rel_part, img_part)
 			ret := pixelcolor(c, m.MaxIteration)
 
-			//col := 255 - int(ret*255/m.MaxIteration)
-			col := int(ret * 255 / m.MaxIteration)
+			col := 255 - int(ret*255/m.MaxIteration)
+			//col := int(ret * 255 / m.MaxIteration)
 
 			img[j][i] = color8BitToRGBA(uint8(col))
 		}

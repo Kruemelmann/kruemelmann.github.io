@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"syscall/js"
+	"time"
 
 	"github.com/kruemelmann/kruemelmann.github.io/go/brot"
 )
@@ -20,25 +21,36 @@ func main() {
 	ctx := setup()
 	resetBackground(ctx, "black")
 
-	man := brot.NewMandelBrot(10, int(canvasSize.w), int(canvasSize.h))
+	man := brot.NewMandelBrot(100, int(canvasSize.w), int(canvasSize.h))
 	arr := man.MandelBrotFunc()
 
-	ctx.Call("beginPath")
-
 	//copy arr to image
-	fmt.Println("Calc begin")
 	img_buf := brot.GetImage(int(canvasSize.w), int(canvasSize.h), arr)
 	enc_str := base64.StdEncoding.EncodeToString(img_buf.Bytes())
 	fmt.Println("Calc end")
 
 	var jsImg js.Value
 	jsImg = js.Global().Call("eval", "new Image()")
+	//image.onload = function() {
+	//	ctx.drawImage(image, 0, 0);
+	//};
+	cb := js.FuncOf(func(this js.Value, args []js.Value) interface{} {
+		go func() {
+			time.Sleep(2 * time.Second)
+			ctx.Call("drawImage", jsImg, 0, 0)
+		}()
+		return nil
+	})
+	jsImg.Set("onload", cb)
 	jsImg.Set("src", "data:image/png;base64,"+enc_str)
-	ctx.Call("drawImage", jsImg, 0, 0)
-
 	fmt.Println("Draw finished")
-	//ctx.Call("closePath")
 
+	//
+	//
+	//  MUST END WITH THIS LINE
+	//
+	//
+	select {}
 }
 
 func setup() js.Value {

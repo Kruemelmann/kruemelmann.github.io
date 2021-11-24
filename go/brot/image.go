@@ -17,7 +17,7 @@ func DrawImage(width, height int, imearr [][]color.RGBA) {
 
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
-			img.Set(x, y, imearr[x][y])
+			img.Set(x, y, imearr[y][x])
 		}
 	}
 
