@@ -3,10 +3,7 @@ package main
 // https://github.com/golang/go/tree/master/src/syscall/js
 import (
 	"fmt"
-	"math"
-	"math/rand"
 	"syscall/js"
-	"time"
 )
 
 var (
@@ -16,61 +13,33 @@ var (
 	canvasSize                          struct{ w, h float64 }
 )
 
-type Point struct {
-	x, y float64
-}
-
-type Ball struct {
-	Pos   Point
-	Color string
-}
-
 func main() {
 	ctx := setup()
 	fmt.Println("Setup finished")
 	resetBackground(ctx, "black")
 
-	//starting point
-	velocity := 10.0
-	rad := 25.0
-	spoint := Point{x: rad + 1, y: rad + 1}
+	//man := brot.NewMandelBrot(10, int(canvasSize.w), int(canvasSize.h))
+	//arr := man.MandelBrotFunc()
+	fmt.Println("Calc finished")
 
-	moveX := math.Cos(math.Pi/180*rad) * velocity
-	moveY := math.Sin(math.Pi/180*rad) * velocity
-	ball := Ball{
-		Pos:   Point{x: spoint.x, y: spoint.y},
-		Color: randomColor(),
-	}
-
-	//animation loop
-	for {
-		resetBackground(ctx, "black")
-
-		if ball.Pos.x > (canvasSize.w-rad) || ball.Pos.x < rad {
-			ball.Color = randomColor()
-			moveX = -moveX
+	//var r, g, b, a uint8
+	//var col string
+	ctx.Call("beginPath")
+	for i := 0; i < int(canvasSize.w); i++ {
+		for j := 0; j < int(canvasSize.h); j++ {
+			//r = arr[i][j].R
+			//g = arr[i][j].G
+			//b = arr[i][j].B
+			//a = 0xff
+			//col = fmt.Sprintf("rgba(\"%s\",\"%s\",\"%s\",\"+%s+\")", r, g, b, a/255)
+			ctx.Set("fillStyle", "rgba(255,0,100,1)")
+			ctx.Call("fillRect", i, j, 1, 1)
 		}
-		if ball.Pos.y > (canvasSize.h-rad) || ball.Pos.y < rad {
-			ball.Color = randomColor()
-			moveY = -moveY
-		}
-		ball.Pos.x += moveX
-		ball.Pos.y += moveY
-
-		ctx.Call("beginPath")
-		ctx.Set("fillStyle", ball.Color)
-		ctx.Call("arc", ball.Pos.x, ball.Pos.y, rad, 0, math.Pi*2, false)
-		ctx.Call("fill")
-		ctx.Call("closePath")
-
-		time.Sleep(100 * time.Microsecond)
 	}
-}
+	ctx.Call("closePath")
+	fmt.Println("Draw finished")
+	//time.Sleep(100 * time.Microsecond)
 
-var colors = []string{"red", "green", "yellow", "purple", "blue"}
-
-func randomColor() string {
-	return colors[rand.Intn(len(colors))]
 }
 
 func setup() js.Value {
@@ -89,10 +58,4 @@ func setup() js.Value {
 
 	ctx := canvas.Call("getContext", "2d")
 	return ctx
-}
-
-//utils
-func resetBackground(ctx js.Value, backgroundcolor string) {
-	ctx.Set("fillStyle", backgroundcolor)
-	ctx.Call("fillRect", 0, 0, canvasSize.w, canvasSize.h)
 }
