@@ -7,11 +7,7 @@
         const buffer = await file.arrayBuffer();
         const go = new Go();
         const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
-        try {
-            go.run(instance);
-        } catch (err) {
-            console.error(err);
-        }
+        go.run(instance);
     }
     setTimeout(() => run("assets/js/game.wasm"));
 </script>
