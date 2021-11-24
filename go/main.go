@@ -2,8 +2,11 @@ package main
 
 // https://github.com/golang/go/tree/master/src/syscall/js
 import (
+	"encoding/base64"
 	"fmt"
 	"syscall/js"
+
+	"github.com/kruemelmann/kruemelmann.github.io/go/brot"
 )
 
 var (
@@ -15,30 +18,25 @@ var (
 
 func main() {
 	ctx := setup()
-	fmt.Println("Setup finished")
 	resetBackground(ctx, "black")
 
-	//man := brot.NewMandelBrot(10, int(canvasSize.w), int(canvasSize.h))
-	//arr := man.MandelBrotFunc()
-	fmt.Println("Calc finished")
+	man := brot.NewMandelBrot(10, int(canvasSize.w), int(canvasSize.h))
+	arr := man.MandelBrotFunc()
 
-	//var r, g, b, a uint8
-	//var col string
 	ctx.Call("beginPath")
-	for i := 0; i < int(canvasSize.w); i++ {
-		for j := 0; j < int(canvasSize.h); j++ {
-			//r = arr[i][j].R
-			//g = arr[i][j].G
-			//b = arr[i][j].B
-			//a = 0xff
-			//col = fmt.Sprintf("rgba(\"%s\",\"%s\",\"%s\",\"+%s+\")", r, g, b, a/255)
-			ctx.Set("fillStyle", "rgba(255,0,100,1)")
-			ctx.Call("fillRect", i, j, 1, 1)
-		}
-	}
-	ctx.Call("closePath")
-	fmt.Println("Draw finished")
-	//time.Sleep(100 * time.Microsecond)
+
+	//copy arr to image
+	fmt.Println("Calc begin")
+	img_buf := brot.GetImage(int(canvasSize.w), int(canvasSize.h), arr)
+	enc_str := base64.StdEncoding.EncodeToString(img_buf.Bytes())
+	fmt.Println("Calc end")
+
+	var jsImg js.Value
+	jsImg = js.Global().Call("eval", "new Image()")
+	jsImg.Set("src", "data:image/png;base64,"+enc_str)
+	ctx.Call("drawImage", jsImg, 0, 0)
+
+	//ctx.Call("closePath")
 
 }
 

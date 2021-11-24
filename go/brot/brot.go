@@ -48,7 +48,7 @@ func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 			//col := 255 - int(ret*255/m.MaxIteration)
 			col := int(ret * 255 / m.MaxIteration)
 
-			img[i][j] = color8BitToRGBA(uint8(col))
+			img[j][i] = color8BitToRGBA(uint8(col))
 		}
 
 	}
@@ -67,9 +67,9 @@ func pixelcolor(c complex128, maxiter int) int {
 }
 
 func generateImgArr(width, height int) [][]color.RGBA {
-	m := make([][]color.RGBA, width)
+	m := make([][]color.RGBA, height)
 	for r := range m {
-		m[r] = make([]color.RGBA, height)
+		m[r] = make([]color.RGBA, width)
 	}
 	return m
 }
