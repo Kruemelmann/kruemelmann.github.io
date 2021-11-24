@@ -6,8 +6,8 @@
         const file = await fetch(fileUrl);
         const buffer = await file.arrayBuffer();
         const go = new Go();
+        const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
         try {
-            const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
             go.run(instance);
         } catch (err) {
             console.error(err);
