@@ -31,7 +31,7 @@ func (m *MandelBrot) DrawToImage() {
 
 func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 	img := generateImgArr(m.Width, m.Height)
-	re_start := -2.0
+	re_start := -2.2
 	re_end := 1.0
 	im_start := -1.0
 	im_end := 1.0
@@ -45,8 +45,13 @@ func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 			var c complex128 = complex(rel_part, img_part)
 			ret := pixelcolor(c, m.MaxIteration)
 
-			col := 255 - int(ret*255/m.MaxIteration)
-			//col := int(ret * 255 / m.MaxIteration)
+			//col := 255 - int(ret*255/m.MaxIteration)
+			col := int(ret * 255 / m.MaxIteration)
+
+			//TODO think about this its only for design resons
+			if col == 0xff {
+				col = 0x00
+			}
 
 			img[j][i] = color8BitToRGBA(uint8(col))
 		}
