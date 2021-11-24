@@ -36,6 +36,7 @@ func main() {
 	jsImg.Set("src", "data:image/png;base64,"+enc_str)
 	ctx.Call("drawImage", jsImg, 0, 0)
 
+	fmt.Println("Draw finished")
 	//ctx.Call("closePath")
 
 }
