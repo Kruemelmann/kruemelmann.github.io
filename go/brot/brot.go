@@ -9,8 +9,6 @@ func NewMandelBrot(max_iteration int, width int, height int) MandelBrot {
 	res := MandelBrot{}
 	res.MaxIteration = max_iteration
 	res.CurIteration = 0
-	res.X = 0
-	res.Y = 0
 	res.Width = width
 	res.Height = height
 
@@ -20,7 +18,6 @@ func NewMandelBrot(max_iteration int, width int, height int) MandelBrot {
 type MandelBrot struct {
 	MaxIteration  int
 	CurIteration  int
-	X, Y          int //unused
 	Width, Height int
 }
 
@@ -45,8 +42,11 @@ func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 			var c complex128 = complex(rel_part, img_part)
 			ret := pixelcolor(c, m.MaxIteration)
 
-			//col := 255 - int(ret*255/m.MaxIteration)
+			//blue inverted
 			col := int(ret * 255 / m.MaxIteration)
+
+			//yellow and colorful
+			//col := 255 - int(ret*255/m.MaxIteration)
 
 			//TODO think about this its only for design resons
 			if col == 0xff {

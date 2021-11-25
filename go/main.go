@@ -21,7 +21,7 @@ func main() {
 	ctx := setup()
 	resetBackground(ctx, "black")
 
-	man := brot.NewMandelBrot(110, int(canvasSize.w), int(canvasSize.h))
+	man := brot.NewMandelBrot(100, int(canvasSize.w), int(canvasSize.h))
 	arr := man.MandelBrotFunc()
 
 	//copy arr to image
@@ -31,9 +31,6 @@ func main() {
 
 	var jsImg js.Value
 	jsImg = js.Global().Call("eval", "new Image()")
-	//image.onload = function() {
-	//	ctx.drawImage(image, 0, 0);
-	//};
 	cb := js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		go func() {
 			time.Sleep(2 * time.Second)
