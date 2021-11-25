@@ -16,18 +16,16 @@ title: kruemelmann's website
 </div>
 
 <!-- cards -->
+<h2>latest blog posts</h2>
 <div class="card-container">
+    {% for post in site.posts %}
     <div class="card">
         <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
+            <h4><b><a href="{{ post.url }}">{{ post.title }}</a></b></h4>
+            <h5>{{ post.date |  date: "%B %e, %Y" }}</h5>
+            <p>{{ post.excerpt }}</p>
         </div>
     </div>
-    <div class="card">
-        <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
