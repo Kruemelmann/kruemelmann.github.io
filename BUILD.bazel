@@ -1,1 +1,28 @@
-load("@rules_pkg//:pkg.bzl", "pkg_tar")
+# Jekyll rule (custom maybe move to an other repo)
+load("@my-jekyll//:jekyll.bzl", "jekyll_build")
+
+filegroup(
+    name = "jekyll-files",
+    srcs = glob(
+        ["**/*"],
+        exclude = [
+            ".git/**",
+            ".github/**",
+            "bazel-*/**",
+            "WORKSPACE",
+            "BUILD",
+            "e2e/**",
+            "scripts/**",
+        ],
+    ),
+)
+
+jekyll_build(
+    name = "local-build",
+    srcs = [":jekyll-files"],
+)
+
+#TODO add a pages build later
+#jekyll_build(
+    #name = "github_pages-build"
+#)

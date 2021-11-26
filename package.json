@@ -7,7 +7,7 @@
   "author": "kruemelmann <kruemelmannlp@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open --config-file ./config/cypress.json"
   },
   "devDependencies": {
     "cypress": "^9.1.0"
