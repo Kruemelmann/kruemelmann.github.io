@@ -1,6 +1,4 @@
 
-start: wasm jekyll
-
 jekyll:
 	bundle exec jekyll serve --livereload
 

@@ -1,0 +1,15 @@
+{
+  "name": "kruemelmann.github.io",
+  "version": "1.0.0",
+  "description": "my little website playground:)",
+  "main": "index.js",
+  "repository": "https://github.com/kruemelmann/kruemelmann.github.io.git",
+  "author": "kruemelmann <kruemelmannlp@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^9.1.0"
+  }
+}
