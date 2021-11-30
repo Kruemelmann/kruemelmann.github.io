@@ -7,7 +7,7 @@ import (
 	"syscall/js"
 	"time"
 
-	"github.com/kruemelmann/kruemelmann.github.io/go/brot"
+	"github.com/kruemelmann/kruemelmann.github.io/src/wasm/go/brot"
 )
 
 var (

@@ -1,5 +1,5 @@
 # Jekyll rule (custom maybe move to an other repo)
-load("@my-jekyll//:jekyll.bzl", "jekyll_build")
+load("@kruemelmann_rules_jekyll//:jekyll.bzl", "jekyll_build")
 
 filegroup(
     name = "jekyll-files",

@@ -1,7 +1,5 @@
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
 
 
 domain: kruemelmann.github.io # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com

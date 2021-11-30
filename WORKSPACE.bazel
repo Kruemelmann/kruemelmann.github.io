@@ -45,7 +45,11 @@ yarn_install(
     yarn_lock = "//:yarn.lock",
 )
 
+#### custom jekyll plugin move to other repo when working
 local_repository(
-    name = "my-jekyll",
+    name = "kruemelmann_rules_jekyll",
     path = "scripts/bazel",
 )
+load("@kruemelmann_rules_jekyll//:deps.bzl", "jekyll_rules_dependencies")
+jekyll_rules_dependencies()
+

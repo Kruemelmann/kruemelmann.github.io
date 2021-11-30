@@ -1,6 +1,5 @@
 # this rule will do my jekyll build
 def _jekyll_build_impl(ctx):
-    print("target", ctx.label.name)
 
     out_file = ctx.actions.declare_directory("_site")
 
@@ -8,16 +7,18 @@ def _jekyll_build_impl(ctx):
         inputs = ctx.files.srcs,
         outputs = [out_file],
         arguments = [],
-        command = "bundle install",
+        command = "bundle install && bundle exec jekyll build",
     )
     return [DefaultInfo(files = depset([out_file]))]
 
 jekyll_build = rule(
     implementation = _jekyll_build_impl,
+    doc = """
+Jekyll rule documentation.
+
+TODO add some docs about how to use jekyll rule
+""",
     attrs = {
         "srcs": attr.label_list(),
     },
 )
-
-print("custom jekyll rule loaded")
-
