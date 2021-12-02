@@ -8,7 +8,6 @@ Location
 
 [kruemelmann.github.io](https://kruemelmann.github.io)
 
-
 Building
 --------
 
@@ -51,8 +50,6 @@ Run Go Unittests
 ```bash
 bazel test //:wasm
 ```
-
-
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

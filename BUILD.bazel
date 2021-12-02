@@ -19,7 +19,7 @@ filegroup(
 
 # correct build instruction and then use out as inputs
 jekyll_build(
-    name = "local-build",
+    name = "site",
     srcs = [":jekyll-srcs"],
 )
 
