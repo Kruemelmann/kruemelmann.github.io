@@ -1,8 +1,8 @@
 # Jekyll rule (custom maybe move to an other repo)
-load("@kruemelmann_rules_jekyll//:jekyll.bzl", "jekyll_build")
+load("@kruemelmann_rules_jekyll//jekyll:defs.bzl", "jekyll_build")
 
 filegroup(
-    name = "jekyll-files",
+    name = "jekyll-srcs",
     srcs = glob(
         ["**/*"],
         exclude = [
@@ -17,12 +17,9 @@ filegroup(
     ),
 )
 
+# correct build instruction and then use out as inputs
 jekyll_build(
     name = "local-build",
-    srcs = [":jekyll-files"],
+    srcs = [":jekyll-srcs"],
 )
 
-#TODO add a pages build later
-#jekyll_build(
-    #name = "github_pages-build"
-#)
