@@ -6,3 +6,18 @@ domain: kruemelmann.github.io # if you want to force HTTPS, specify the domain w
 url: https://kruemelmann.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: ""
 repository: kruemelmann/kruemelmann.github.io
+
+exclude:
+  - bazel-*
+  - Gemfile*
+  - go.*
+  - e2e*
+  - src*
+  - package*
+  - BUILD*
+  - WORKSPACE*
+  - yarn*
+  - renovate*
+  - config*
+  - README.md
+
