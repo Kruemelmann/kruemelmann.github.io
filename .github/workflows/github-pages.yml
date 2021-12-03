@@ -15,7 +15,8 @@ jobs:
           go-version: '^1.17.1'
       - run: go version
       - name: build go to wasm
-        run: make wasm
+        # TODO(kruemelmann) use the bazel target
+        run: GOOS=js GOARCH=wasm go build -o ./assets/wasm/game.wasm ./src/wasm/go/
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
