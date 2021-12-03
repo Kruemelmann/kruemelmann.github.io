@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "brot",
+    srcs = [
+        "brot.go",
+        "image.go",
+    ],
+    importpath = "github.com/kruemelmann/kruemelmann.github.io/src/wasm/go/brot",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "brot_test",
+    srcs = [
+        "brot_test.go",
+        "image_test.go",
+    ],
+)

@@ -1,5 +1,9 @@
-# Jekyll rule (custom maybe move to an other repo)
+load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@kruemelmann_rules_jekyll//jekyll:defs.bzl", "jekyll_build")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+
+# gazelle:prefix github.com/kruemelmann/kruemelmann.github.io
+gazelle(name = "gazelle")
 
 filegroup(
     name = "jekyll-srcs",
@@ -23,3 +27,10 @@ jekyll_build(
     srcs = [":jekyll-srcs"],
 )
 
+go_binary(
+    name = "wasm",
+    embed = ["//src/wasm/go:go_lib"],
+    goarch = "wasm",
+    goos = "js",
+    visibility = ["//visibility:public"],
+)

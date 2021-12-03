@@ -18,7 +18,7 @@ bazel build  //:site
 
 Build wasm:
 ```bash
-bazel build wasm
+bazel build //:wasm
 ```
 
 
