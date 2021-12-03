@@ -19,11 +19,11 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
 
-#### custom jekyll plugin move to other repo when working
 git_repository(
     name = "kruemelmann_rules_jekyll",
     remote = "https://github.com/Kruemelmann/rules_jekyll.git",
-    commit = "8b403191ce2e071e3c87bd2a4153c35ac8fbef16",
+    commit = "8943a16848992df4cd255f766835adb8a94db699",
+    shallow_since = "1638457370 +0100"
 )
 
 load("@kruemelmann_rules_jekyll//jekyll:deps.bzl", "jekyll_rules_dependencies")
