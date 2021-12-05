@@ -7,6 +7,14 @@ url: https://kruemelmann.github.io  # the base hostname and protocol for your si
 baseurl: ""
 repository: kruemelmann/kruemelmann.github.io
 
+
+
+kramdown:
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+
+# dont copy to _site folder
 exclude:
   - bazel-*
   - Gemfile*

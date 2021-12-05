@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import "./blog.scss";
 
 body, html {
     font-family: 'Roboto Mono', monospace;
+    //font-family: 'Fuzzy Bubbles', cursive;
     margin: 0;
     height: 100%;
     width: 100%;
@@ -59,7 +64,7 @@ footer{
     list-style-type: none;
 }
 
-.blog-body{
+.page-body{
     margin: 50px;
 }
 
