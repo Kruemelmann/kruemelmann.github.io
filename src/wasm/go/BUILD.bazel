@@ -10,7 +10,7 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "//src/wasm/go/brot",
-    ]
+    ],
 )
 
 go_binary(

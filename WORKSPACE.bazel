@@ -11,13 +11,15 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 ############################################################
 http_archive(
     name = "bazel_skylib",
+    sha256 = "c6966ec828da198c5d9adbaa94c05e3a1c7f21bd012a0b29ba8ddbccb2c93b0d",
     urls = [
         "https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
         "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
     ],
-    sha256 = "c6966ec828da198c5d9adbaa94c05e3a1c7f21bd012a0b29ba8ddbccb2c93b0d",
 )
+
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
 bazel_skylib_workspace()
 
 ############################################################
@@ -25,15 +27,17 @@ bazel_skylib_workspace()
 ############################################################
 git_repository(
     name = "kruemelmann_rules_jekyll",
-    remote = "https://github.com/Kruemelmann/rules_jekyll.git",
     commit = "8943a16848992df4cd255f766835adb8a94db699",
-    shallow_since = "1638457370 +0100"
+    remote = "https://github.com/Kruemelmann/rules_jekyll.git",
+    shallow_since = "1638457370 +0100",
 )
 
 load("@kruemelmann_rules_jekyll//jekyll:deps.bzl", "jekyll_rules_dependencies")
+
 jekyll_rules_dependencies()
 
 load("@kruemelmann_rules_jekyll//jekyll:defs.bzl", "jekyll_repositories")
+
 jekyll_repositories()
 
 ############################################################
@@ -75,5 +79,24 @@ go_register_toolchains(version = "1.17.2")
 
 gazelle_dependencies(go_repository_default_config = "@//:WORKSPACE.bazel")
 
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "9b4ee22c250fe31b16f1a24d61467e40780a3fbb9b91c3b65be2a376ed913a1a",
+    strip_prefix = "protobuf-3.13.0",
+    urls = [
+        "https://github.com/protocolbuffers/protobuf/archive/v3.13.0.tar.gz",
+    ],
+)
 
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
+protobuf_deps()
+
+http_archive(
+    name = "com_github_bazelbuild_buildtools",
+    sha256 = "ae34c344514e08c23e90da0e2d6cb700fcd28e80c02e23e4d5715dddcb42f7b3",
+    strip_prefix = "buildtools-4.2.2",
+    urls = [
+        "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.2.tar.gz",
+    ],
+)

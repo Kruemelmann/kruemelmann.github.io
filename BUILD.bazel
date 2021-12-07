@@ -1,6 +1,7 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@kruemelmann_rules_jekyll//jekyll:defs.bzl", "jekyll_build")
 load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
 # gazelle:prefix github.com/kruemelmann/kruemelmann.github.io
 gazelle(name = "gazelle")
@@ -33,4 +34,8 @@ go_binary(
     goarch = "wasm",
     goos = "js",
     visibility = ["//visibility:public"],
+)
+
+buildifier(
+    name = "buildifier",
 )
