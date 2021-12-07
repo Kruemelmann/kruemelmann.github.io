@@ -1,0 +1,56 @@
+nav {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 15px;
+    font-size: 2em;
+    width: 10%;
+    align-self: flex-start;
+}
+
+.logo > a {
+    color: white;
+}
+
+.navbar-item {
+  margin: 10px;
+  margin-right: 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.navbar-item > a {
+    color: white;
+}
+
+.navbar{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;;
+}
+
+header {
+    width: 100%;
+    background-color: black;
+}
+
+.headline {
+    position: absolute;
+    color: white;
+    z-index: 100;
+    align-items: center;
+    flex-direction: column;
+    top: 20%;
+    left: 50%;
+    right: 50%;
+}
+
+
+.headline-item {
+    display: block ruby;
+}
