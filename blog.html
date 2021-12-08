@@ -9,13 +9,12 @@ title: Blog
 
     <ul class="blog-list">
         {% for post in site.posts %}
-            <li>
+            <li class="blog-list-item">
                 <div><a href="{{ post.url }}">{{ post.title }}</a></div>
                 <div>
                     {{ post.excerpt }}
                 </div>
             </li>
-            <br></br>
         {% endfor %}
     </ul>
 </div>

@@ -45,19 +45,22 @@ title: About
                 </p>
 
                 <div class="timeline">
-                    <div class="tcontainer tleft">
+                {% for item in site.data.timeline %}
+                    {% assign pos = item.id | modulo: 2 %}
+                    <div
+                    {% if pos == 0 %}
+                        class="tcontainer tright"
+                    {% else %}
+                        class="tcontainer tleft"
+                    {% endif %}>
                         <div class="tcontent">
-                            <h2>1234</h2>
-                            <p>Lorem ipsum..</p>
+                            <h2>{{ item.title }} </h2>
+                            <p>{{ item.text }}</p>
                         </div>
                     </div>
-                    <div class="tcontainer tright">
-                        <div class="tcontent">
-                            <h2>5678</h2>
-                            <p>Lorem ipsum..</p>
-                        </div>
-                    </div>
+                {% endfor %}
                 </div>
+
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
     </div>
     <ul class="navbar">
         {% for item in site.data.navigation %}
-            <li class="navbar-item">
+            <li class="navbar-item navbar-item-hover">
                 <a href="{{ item.link }}" {% if page.url == item.link %}{% endif %}>
                     {{ item.name }}
                 </a>

@@ -15,10 +15,18 @@ nav {
     color: white;
 }
 
+.navbar{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;;
+}
+
 .navbar-item {
-  margin: 10px;
-  margin-right: 20px;
-  padding: 0;
+    padding: 10px;
+    padding-right: 20px;
+  //margin: 10px;
+  //margin-right: 20px;
   list-style: none;
   font-size: 1.5em;
 }
@@ -27,11 +35,9 @@ nav {
     color: white;
 }
 
-.navbar{
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;;
+.navbar-item-hover:hover {
+    background-color: #101010;
+    border-radius: 10px;
 }
 
 header {
@@ -49,7 +55,6 @@ header {
     left: 50%;
     right: 50%;
 }
-
 
 .headline-item {
     display: block ruby;
