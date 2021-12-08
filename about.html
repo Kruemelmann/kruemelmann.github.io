@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: nofooter
 title: About
 ---
 
@@ -7,4 +7,58 @@ title: About
     <h1>
         About
     </h1>
+
+    <div class="author-container">
+        <div>
+            <div>
+                <img class="author-avatar" src="https://avatars.githubusercontent.com/u/26007494" alt="Avatar">
+            </div>
+            <div>
+                <hr>
+                <h5>sozials</h5>
+                <ul style="list-style-type: none; display: inline;">
+                    {% for item in site.data.sozials %}
+                    <li class="navbar-item sozials" style="display: inline; background-color: #303030;">
+                        <a href="{{ item.link }}" target="_blank"
+                           {% if item.name == "Github" %}
+                           class="fa fa-github"
+                           {% endif %}
+                           {% if item.name == "Twitter" %}
+                           class="fa fa-twitter"
+                           {% endif %}>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="author-detail">
+            <div class="author-detail-headline">
+                kruemelmann
+            </div>
+            <hr>
+            <div class="author-detail-text">
+                <p>
+                    Later i will add some detail about my self:) TODO
+
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+
+                <div class="timeline">
+                    <div class="tcontainer tleft">
+                        <div class="tcontent">
+                            <h2>1234</h2>
+                            <p>Lorem ipsum..</p>
+                        </div>
+                    </div>
+                    <div class="tcontainer tright">
+                        <div class="tcontent">
+                            <h2>5678</h2>
+                            <p>Lorem ipsum..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
