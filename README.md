@@ -30,26 +30,5 @@ To start the website locally in your browser:
 bazel run //:site
 ```
 
-
-Testing
--------
-
-<!--TODO add more information-->
-The project uses cypress for e2e tests
-
-```bash
-bazel test //:e2e
-```
-
-Show Go Code Coverage
-```bash
-bazel coverage //:wasm
-```
-
-Run Go Unittests
-```bash
-bazel test //:wasm
-```
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
