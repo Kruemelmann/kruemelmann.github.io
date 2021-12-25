@@ -7,11 +7,16 @@
 }
 
 .blog-list-item{
-    background-color: #303030;
+    background-color: #242424;
     margin-bottom: 15px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.blog-list-item:hover {
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.7);
+    background-color: #292929;
 }
 
 //code block style

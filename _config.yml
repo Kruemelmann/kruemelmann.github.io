@@ -28,4 +28,5 @@ exclude:
   - renovate*
   - config*
   - README.md
+  - node_modules*
 

@@ -4,7 +4,7 @@ title: jekyll-setup
 published: true
 ---
 
-# Jekyll Setup
+In this article i would like to show you how to install the required tools to build this blog.
 
 > The installation process is obsolete if i am finished writing my jekyll bazel rule. Then you only need to have bazel installed but for now that is the way to build this jekyll page.
 
@@ -35,8 +35,13 @@ In my case zsh:
 ```bash
 echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
 ```
+3. (On mojave you need to have openssl installed)
+```bash
+brew install openssl
+```
 
-3. (on certain versions of MacOs you need to install the bundler and the jekyll gem by hand)
+
+4. (on certain versions of MacOs you need to install the bundler and the jekyll gem by hand)
 Like the following:
 
 ```bash
