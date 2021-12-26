@@ -3,9 +3,10 @@ layout: base
 title: Blog
 ---
 <div class="page-body">
-    <h1>
-        Blog
-    </h1>
+    <h1>Blog</h1>
+    <div>
+        <input type="text" placeholder="" id="searchbar" onkeyup="searchPost()">
+    </div>
 
     <ul class="blog-list">
         {% for post in site.posts %}

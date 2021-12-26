@@ -36,7 +36,7 @@ In the following canvas you get the image of the day from the Nasa API.
 
 
 <div>
-    <canvas id="picoftheday" style="width: 100%; height=auto;"></canvas>
+    <img id="picoftheday" style="width: 100%; height=auto;">
     <div>
     <div>
         Title: <span id="picoftheday_title"></span>
@@ -46,24 +46,15 @@ In the following canvas you get the image of the day from the Nasa API.
     </div>
     </div>
     <script>
-    const myCanvas = document.getElementById("picoftheday");
-    const context = myCanvas.getContext("2d");
-    let width = myCanvas.width;
-    let height = myCanvas.height;
-
     (async () => {
     let response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
     let res_parsed = await response.json();
+
+    document.getElementById("picoftheday").src=res_parsed.hdurl;
     //set some metadata about the image
     document.getElementById('picoftheday_copyright').innerText = res_parsed.copyright
     document.getElementById('picoftheday_title').innerText = res_parsed.title
 
-
-    let base_image = new Image();
-    base_image.src = ""+res_parsed.hdurl;
-    base_image.onload = function(){
-        context.drawImage(base_image, 0, 0, width, height);
-    }
     })();
     </script>
 </div>
