@@ -1,4 +1,4 @@
-function searchPost() {
+function filterBlogPosts() {
     let searchbar = document.getElementById("searchbar");
     let postcontainer = document.querySelector(".blog-list");
     let arr = postcontainer.getElementsByTagName("li");
