@@ -22,3 +22,18 @@ a {
 .page-body{
     margin: 50px;
 }
+
+button {
+    color: #333;
+    width: auto;
+    text-align: center;
+    padding: 0 10px;
+    background: #f0f0f0;
+    line-height: 1.5em;
+    height: auto;
+}
+
+button.active {
+    background: black;
+    color: #fff;
+}

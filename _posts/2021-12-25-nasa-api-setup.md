@@ -51,10 +51,13 @@ In the following canvas you get the image of the day from the Nasa API.
     let response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
     let res_parsed = await response.json();
 
-    document.getElementById("picoftheday").src=res_parsed.hdurl;
-    //set some metadata about the image
-    document.getElementById('picoftheday_copyright').innerText = res_parsed.copyright
-    document.getElementById('picoftheday_title').innerText = res_parsed.title
+    //TODO add case for video
+    if (res_parsed.media_type == "image") {
+        document.getElementById("picoftheday").src=res_parsed.hdurl;
+        //set some metadata about the image
+        document.getElementById('picoftheday_copyright').innerText = res_parsed.copyright
+        document.getElementById('picoftheday_title').innerText = res_parsed.title
+    }
 
     })();
     </script>
