@@ -23,14 +23,18 @@ title: Blog
                 <h4 href="{{ post.url }}">
                     <a>{{ post.title }}</a>
                 </h4>
-                <span>
-                    {% for tag in post.tags %}
-                        <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </span>
+                <h6>
+                    {{ post.date | date: "%-d %B %Y" }}
+                </h6>
                 <div>
                     {{ post.excerpt }}
                 </div>
+                <h6>
+                    tags:
+                    {% for tag in post.tags %}
+                        <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </h6>
             </li>
         {% endfor %}
     </ul>
