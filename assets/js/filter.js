@@ -8,30 +8,26 @@ function filterBlogPosts() {
     let arr = postcontainer.getElementsByTagName("li");
 
     for (let i = 0; i < arr.length; i++) {
+        //handle search bar input
         let str = arr[i].textContent || arr[i].innerText;
-
-        //handle searchbar input
+        let wordfound = false;
         if (str.toUpperCase().indexOf(searchbar.value.toUpperCase()) > -1) {
+            wordfound = true;
+        }
+
+        //handle tag filter
+        let intersect = intersectArray(activecategories, getTags(arr[i]))
+        let matchtags = false;
+        if (activecategories.size <= intersect.length) {
+            matchtags = true;
+        }
+
+        if (wordfound == true && matchtags == true) {
             arr[i].style.display = "";
         } else {
             arr[i].style.display = "none";
         }
 
-        let tags = getTags(arr[i])
-        let intersect = intersectArray(activecategories, tags)
-
-        if (activecategories.size > 0 && intersect.length > 0) {
-            //arr[i].style.display = "";
-            console.log(intersect);
-        } else {
-            arr[i].style.display = "none";
-        }
-
-        if (activecategories.size == 0 && intersect.length == 0) {
-            if (arr[i].style.display == "none") {
-                console.log("s");
-            }
-        }
 
     }
 }
