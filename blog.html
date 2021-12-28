@@ -9,12 +9,12 @@ title: Blog
     </div>
     <div class="catfilter-container">
         <div>
-            results: <span id="results_count"></span>
-        </div>
-        <div>
             {% for tag in site.tags %}
                 <button id="catfilter-{{ tag[0] }}" onclick="toggleCategoryFilter(this.id,'{{ tag[0] }}')" > {{ tag[0] }} </button>
             {% endfor %}
+        </div>
+        <div>
+            results: <span id="results_count"></span>
         </div>
     </div>
     <ul class="blog-list">
