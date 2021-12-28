@@ -7,6 +7,7 @@ function filterBlogPosts() {
     let postcontainer = document.querySelector(".blog-list");
     let arr = postcontainer.getElementsByTagName("li");
 
+    let matchcount = 0;
     for (let i = 0; i < arr.length; i++) {
         //handle search bar input
         let str = arr[i].textContent || arr[i].innerText;
@@ -24,12 +25,12 @@ function filterBlogPosts() {
 
         if (wordfound == true && matchtags == true) {
             arr[i].style.display = "";
+            matchcount++;
         } else {
             arr[i].style.display = "none";
         }
-
-
     }
+    document.getElementById("results_count").innerText = matchcount;
 }
 
 function intersectArray(arr1, arr2) {

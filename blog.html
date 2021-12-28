@@ -7,10 +7,15 @@ title: Blog
     <div class="searchbar-container">
         <input type="text" placeholder="" id="searchbar" onkeyup="filterBlogPosts()">
     </div>
-    <div>
-    {% for tag in site.tags %}
-        <button id="catfilter-{{ tag[0] }}" onclick="toggleCategoryFilter(this.id,'{{ tag[0] }}')" > {{ tag[0] }} </button>
-    {% endfor %}
+    <div class="catfilter-container">
+        <div>
+            results: <span id="results_count"></span>
+        </div>
+        <div>
+            {% for tag in site.tags %}
+                <button id="catfilter-{{ tag[0] }}" onclick="toggleCategoryFilter(this.id,'{{ tag[0] }}')" > {{ tag[0] }} </button>
+            {% endfor %}
+        </div>
     </div>
     <ul class="blog-list">
         {% for post in site.posts %}
@@ -29,5 +34,12 @@ title: Blog
             </li>
         {% endfor %}
     </ul>
-
+    <script>
+        // This block gets executed when the DOM is ready
+        //      -> so the list of posts is available here
+        // self executing function here
+        (function() { // the DOM will be available here
+            filterBlogPosts()
+        })();
+    </script>
 </div>
