@@ -1,8 +1,10 @@
 ---
+
 layout: blog
 title: jekyll-setup
 published: true
 tags: jekyll golang bazel
+
 ---
 
 In this article i would like to show you how to install the required tools to build this blog.
