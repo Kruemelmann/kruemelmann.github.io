@@ -1,7 +1,6 @@
-
-//TODO document global
 let activecategories = new Set();
 
+//filterBlogPosts hides or shows the posts depending on the filter (search string, category buttons)
 function filterBlogPosts() {
     let searchbar = document.getElementById("searchbar");
     let postcontainer = document.querySelector(".blog-list");
@@ -33,11 +32,13 @@ function filterBlogPosts() {
     document.getElementById("results_count").innerText = matchcount;
 }
 
+//intersectArray looks for same elements in two arrays and return an array of them
 function intersectArray(arr1, arr2) {
     let res = Array.from(arr1).filter(value => Array.from(arr2).includes(value));
     return res
 }
 
+//getTags reads all the tags of a post and produce an array out of them
 function getTags(post) {
     let tagelems = post.getElementsByClassName("tag");
     let posttags = new Array;
@@ -47,7 +48,7 @@ function getTags(post) {
     return posttags
 }
 
-
+//toggleCategoryFilter adds and removes a category from the filter
 function toggleCategoryFilter(id, category_name) {
     let elem = document.getElementById(id);
     if (elem.classList.contains('active')) {
