@@ -1,7 +1,7 @@
 ---
 
 layout: blog
-title: Nasa API Setup
+title: nasa api setup
 published: true
 tags: space nasa
 
