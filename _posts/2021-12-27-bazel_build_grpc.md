@@ -4,6 +4,7 @@ layout: blog
 title: how you can build grpc with bazel
 published: true
 tags: bazel golang
+
 ---
 
 In this article I show how I am building grpc and golang
@@ -11,6 +12,7 @@ with bazel and still have the option to work with an editor
 like vim.
 
 ---
+
 **Disclaimer**
 
 Status: Draft this article is not finished yet
@@ -74,10 +76,12 @@ In the root of my project I put a bash script that is called
 So if others builds it, everyone uses the same build command.
 
 ```bash
+
 #!/bin/bash
 
 #Build the xyz
 protoc -I=. --go_out=. --go-grpc_out=. pkg/pb/xyz.proto
+
 ```
 
 All the .proto files are located in the pkg/pb/ folder.
@@ -86,7 +90,9 @@ Next I put a BUILD file into the folder which excludes all the
 to not generate build targets for it.
 
 ```python
+
 # gazelle:exclude *.proto
+
 ```
 
 In the .proto file I configure where the grpc files should be
@@ -94,15 +100,19 @@ stored. To easily find them I generate a folder next to the
 proto files that have the same name as these file.
 
 ```proto
+
 syntax = "proto3";
 option go_package = "pkg/pb/xyz;xyz";
+
 ```
 
 After that i call gazelle which finds the new folder and
 generates targets for it.
 
 ```bash
+
 bazel run //:gazelle
+
 ```
 
 Now you can import it with the full path and bazel is able to
