@@ -59,6 +59,8 @@ function init() {
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth* resolution, window.innerHeight *resolution);
+    renderer.domElement.style.width  = '100%';
+    renderer.domElement.style.height = 'auto';
     three_container.appendChild( renderer.domElement );
 
     document.addEventListener( 'pointermove', onPointerMove );
@@ -144,6 +146,19 @@ function render() {
 }
 
 
+//draw a cube todo document
+function drawcube(x,y,z){
+    let face = {x: 0,y: 1,z: 6,}
+    //50 is the cube size
+    let point = {x: 50 * x,y: 50 * y,z: 50 * z,}
+
+    const voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
+    voxel.position.copy( point ).add( face );
+    voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
+    scene.add( voxel );
+    objects.push( voxel );
+}
+
 //3d game of life
 function gen3dArr(grid_length, grid_width, grid_height) {
     let grid = new Array(grid_length)
@@ -162,6 +177,9 @@ function gen3dArr(grid_length, grid_width, grid_height) {
             for (let k = 0; k < grid[i][j].length; k++) {
                 if(Math.random() < filled_percent) {
                     grid[i][j][k] = Math.round(Math.random());
+                    if (grid[i][j][k] == 1) {
+                        drawcube(i,j,k)
+                    }
                 } else {
                     grid[i][j][k] = 0;
                 }
@@ -170,28 +188,11 @@ function gen3dArr(grid_length, grid_width, grid_height) {
     }
     console.log(grid);
 }
-gen3dArr(2,2,2)
+
+gen3dArr(10,10,10)
 
 
-let face = {
-    x: 0,
-    y: 1,
-    z: 6.123233701766511e-17,
-}
 
-for (let i = 1; i <= 10; i++) {
-    console.log("rn");
-    let point = {
-        x: i* resolution,
-        y: 10,
-        z: 10,
-    }
-    const voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
-    voxel.position.copy( point ).add( face );
-    voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
-    scene.add( voxel );
-    objects.push( voxel );
-}
 
 
 
