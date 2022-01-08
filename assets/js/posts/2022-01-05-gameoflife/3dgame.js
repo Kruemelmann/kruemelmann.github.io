@@ -1,4 +1,5 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
+import { OrbitControls } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
 
 let camera, scene, renderer;
 let plane;
@@ -19,7 +20,7 @@ function init() {
     camera.lookAt( 0, 0, 0 );
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xf0f0f0 );
+    scene.background = new THREE.Color( 0x101010 );
 
     // roll-over helpers
     const rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
@@ -61,17 +62,15 @@ function init() {
     renderer.setSize( window.innerWidth* resolution, window.innerHeight *resolution);
     renderer.domElement.style.width  = '100%';
     renderer.domElement.style.height = 'auto';
+
     three_container.appendChild( renderer.domElement );
+    const controls = new OrbitControls( camera, renderer.domElement );
 
     document.addEventListener( 'pointermove', onPointerMove );
-    document.addEventListener( 'pointerdown', onPointerDown );
+    //document.addEventListener( 'pointerdown', onPointerDown );
     document.addEventListener( 'keydown', onDocumentKeyDown );
     document.addEventListener( 'keyup', onDocumentKeyUp );
-
-    //
-
     window.addEventListener( 'resize', onWindowResize );
-
 }
 
 //TODO
@@ -103,33 +102,31 @@ function onPointerMove( event ) {
 
 }
 
-function onPointerDown( event ) {
-    pointer.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
-    raycaster.setFromCamera( pointer, camera );
-    const intersects = raycaster.intersectObjects( objects, false );
-    if ( intersects.length > 0 ) {
-        const intersect = intersects[ 0 ];
+//function onPointerDown( event ) {
+    //pointer.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+    //raycaster.setFromCamera( pointer, camera );
+    //const intersects = raycaster.intersectObjects( objects, false );
+    //if ( intersects.length > 0 ) {
+        //const intersect = intersects[ 0 ];
+        //if ( isShiftDown ) {
+            //// delete cube
+            //if ( intersect.object !== plane ) {
+                //scene.remove( intersect.object );
+                //objects.splice( objects.indexOf( intersect.object ), 1 );
+            //}
+        //} else {
+            //// create cube
+            //const voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
+            //voxel.position.copy( intersect.point ).add( intersect.face.normal );
+            //voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
+            //console.log(intersect.point);
+            //scene.add( voxel );
+            //objects.push( voxel );
+        //}
+        //render();
+    //}
+//}
 
-        if ( isShiftDown ) {
-            // delete cube
-            if ( intersect.object !== plane ) {
-                scene.remove( intersect.object );
-                objects.splice( objects.indexOf( intersect.object ), 1 );
-            }
-        } else {
-            // create cube
-            const voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
-            voxel.position.copy( intersect.point ).add( intersect.face.normal );
-            voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
-
-            console.log(intersect.point);
-
-            scene.add( voxel );
-            objects.push( voxel );
-        }
-        render();
-    }
-}
 function onDocumentKeyDown( event ) {
     switch ( event.keyCode ) {
         case 16: isShiftDown = true; break;
@@ -137,7 +134,6 @@ function onDocumentKeyDown( event ) {
 }
 function onDocumentKeyUp( event ) {
     switch ( event.keyCode ) {
-
         case 16: isShiftDown = false; break;
     }
 }
@@ -169,7 +165,25 @@ function gen3dArr(grid_length, grid_width, grid_height) {
             grid[i][j] = new Array(grid_width)
         }
     }
+    return grid
+}
+let grid = gen3dArr(10,10,10)
 
+
+generateRandomCubes(grid)
+
+function generateRandomCubes(grid) {
+    generateSector(-1,-1,-1)
+    generateSector(-1,-1,1)
+    generateSector(-1,1,-1)
+    generateSector(-1,1,1)
+    generateSector(1,-1,-1)
+    generateSector(1,-1,1)
+    generateSector(1,1,-1)
+    generateSector(1,1,1)
+}
+
+function generateSector(signi, signj, signk) {
     //fill with random vals
     let filled_percent = 1/10
     for (let i = 0; i < grid.length; i++) {
@@ -178,7 +192,7 @@ function gen3dArr(grid_length, grid_width, grid_height) {
                 if(Math.random() < filled_percent) {
                     grid[i][j][k] = Math.round(Math.random());
                     if (grid[i][j][k] == 1) {
-                        drawcube(i,j,k)
+                        drawcube(signi*i,signj*j,signk*k)
                     }
                 } else {
                     grid[i][j][k] = 0;
@@ -186,13 +200,29 @@ function gen3dArr(grid_length, grid_width, grid_height) {
             }
         }
     }
-    console.log(grid);
 }
+//
+//actualy play the game
+function test(){
+    setTimeout(function(){
 
-gen3dArr(10,10,10)
+        for (let i = 0; i < grid.length; i++) {
+            for (let j = 0; j < grid[i].length; j++) {
+                for (let k = 0; k < grid[i][j].length; k++) {
+                    if(Math.random() < 1/10) {
+                        grid[i][j][k] = Math.round(Math.random());
+                        if (grid[i][j][k] == 1) {
+                            drawcube(i,j,k)
+                        }
+                    } else {
+                        grid[i][j][k] = 0;
+                    }
+                }
+            }
+        }
 
-
-
-
-
-
+        test()
+    }, 1000);
+}
+// FIXME add button to toggle animation
+//test()

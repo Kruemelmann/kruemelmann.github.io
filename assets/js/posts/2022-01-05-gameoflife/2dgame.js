@@ -136,5 +136,5 @@ function playTheGameOfLife(grid, cols, rows) {
         }, 100);
     }
     // FIXME add button to toggle animation
-            test()
+    test()
 })();
