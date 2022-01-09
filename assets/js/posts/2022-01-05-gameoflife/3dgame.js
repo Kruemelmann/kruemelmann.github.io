@@ -225,4 +225,4 @@ function test(){
     }, 1000);
 }
 // FIXME add button to toggle animation
-//test()
+test()
