@@ -24,6 +24,7 @@ title: kruemelmann's website
             <h4><b><a href="{{ post.url }}">{{ post.title }}</a></b></h4>
             <h5>{{ post.date |  date: "%B %e, %Y" }}</h5>
             <p>{{ post.excerpt }}</p>
+          <!-- only show last 5 posts, others can be scrolled -->
         </div>
     </div>
     {% endfor %}

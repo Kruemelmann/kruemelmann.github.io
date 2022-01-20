@@ -73,7 +73,7 @@ function init() {
     window.addEventListener( 'resize', onWindowResize );
 }
 
-//TODO
+//onWindowResize updates the perspective of the camera and the canvas size
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
