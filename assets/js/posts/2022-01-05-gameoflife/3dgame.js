@@ -203,7 +203,7 @@ function generateSector(signi, signj, signk) {
 }
 //
 //actualy play the game
-function test(){
+function animate(){
     setTimeout(function(){
 
         for (let i = 0; i < grid.length; i++) {
@@ -221,8 +221,8 @@ function test(){
             }
         }
 
-        test()
+        animate()
     }, 1000);
 }
 // FIXME add button to toggle animation
-test()
+animate()
