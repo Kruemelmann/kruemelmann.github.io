@@ -11,7 +11,6 @@ func NewMandelBrot(max_iteration int, width int, height int) MandelBrot {
 	res.CurIteration = 0
 	res.Width = width
 	res.Height = height
-
 	return res
 }
 
