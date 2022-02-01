@@ -7,5 +7,4 @@ tags: golang cli
 
 ---
 
-TODO write about how to build cobra cli with factories instead of using the init functions
 
