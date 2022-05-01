@@ -18,9 +18,9 @@ title: kruemelmann's website
 <!-- cards -->
 <div class="card-container">
     {% for post in site.posts %}
-    <div class="card">
-        <div class="container">
-            <h4><b><a href="{{ post.url }}">{{ post.title }}</a></b></h4>
+    <div class="card" onclick="location.href='{{ post.url }}';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>{{ post.title }}</a></b></h4>
             <h5>{{ post.date |  date: "%B %e, %Y" }}</h5>
             <p>{{ post.excerpt }}</p>
           <!-- only show last 5 posts, others can be scrolled -->
