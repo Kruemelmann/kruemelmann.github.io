@@ -8,12 +8,12 @@ function startHashRouting() {
             window.location.href = '2022/05/01/komodo.html';
         }
         //tmux-iconbar
-        if (hash == "tmux-iconbar") {
+        if (hash == "tmuxiconbar") {
             window.location.href = '2021/11/19/tmux-iconbar.html';
         }
         //pathfind
         if (hash == "pathfind") {
-            window.location.href = '2021/11/19/pathfind.html';
+            window.location.href = '2021/11/19/pathfind.vim.html';
         }
     }
 }

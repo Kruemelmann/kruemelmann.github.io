@@ -2,9 +2,9 @@
 
 layout: blog
 title: tmux-iconbar
-published: false
+published: true
 tags: tmux terminal
 
 ---
 
-TODO write what the hell tmux-iconbar is and how it works:)
+TODO write what tmux-iconbar is and how it works:)
