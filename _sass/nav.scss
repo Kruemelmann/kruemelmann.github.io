@@ -51,11 +51,20 @@ header {
     z-index: 100;
     align-items: center;
     flex-direction: column;
-    top: 20%;
+    top: 35%;
     left: 50%;
     right: 50%;
 }
 
 .headline-item {
     display: block ruby;
+}
+
+.scroll-down {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    right: 50%;
+    color: white;
+    font-size: 80px;
 }
