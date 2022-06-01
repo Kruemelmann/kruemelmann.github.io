@@ -15,6 +15,10 @@ function startHashRouting() {
         if (hash == "pathfind") {
             window.location.href = '2021/11/19/pathfind.vim.html';
         }
+        //golemdb
+        if (hash == "golemdb") {
+            window.location.href = '404.html';
+        }
     }
 }
 
