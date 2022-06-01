@@ -68,12 +68,13 @@ header {
     right: 50%;
     color: white;
     font-size: 80px;
+    animation: bounce 1.5s;
+    animation-iteration-count: infinite;
+    -moz-animation-name: bounce;
 
     &:hover {
         cursor: pointer;
-        animation: bounce 1.5s;
-        animation-iteration-count: infinite;
-        -moz-animation-name: bounce;
+        animation: none;
     }
 }
 
