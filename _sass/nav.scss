@@ -61,10 +61,36 @@ header {
 }
 
 .scroll-down {
+    width: fit-content;
     position: absolute;
     top: 85%;
     left: 50%;
     right: 50%;
     color: white;
     font-size: 80px;
+
+    &:hover {
+        cursor: pointer;
+        animation: bounce 1.5s;
+        animation-iteration-count: infinite;
+        -moz-animation-name: bounce;
+    }
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+	60% {
+		-webkit-transform: translateY(-10px);
+		-ms-transform:     translateY(-10px);
+		transform:         translateY(-10px)
+	}
 }
