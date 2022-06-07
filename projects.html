@@ -1,0 +1,20 @@
+---
+layout: nofooter
+title: Projects
+---
+
+<div class="page-body">
+    <h1>
+        Projects
+    </h1>
+
+    <ul style="list-style-type: none; display: inline;">
+        {% for projects in site.data.projects %}
+        <li class="">
+            <a href="{{ projects.url }}">
+                {{ projects.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

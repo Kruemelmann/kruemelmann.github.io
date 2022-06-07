@@ -8,6 +8,11 @@ You can find it
 
 [kruemelmann.github.io](https://kruemelmann.github.io)
 
+TODOs
+--------
+* add conditional requests to golem (github has a request limit)
+    https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
+
 Building
 --------
 

@@ -1,0 +1,79 @@
+.page-content {
+  position: relative;
+  background-color: #DDD;
+  color: black;
+}
+
+.page-content > h1 {
+  margin: 0px;
+}
+.wave-container {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wave-top {
+  background: #DDD;
+}
+
+.wave-bottum {
+  background: #5000ca;
+}
+
+svg {
+  stroke: transparent;
+  stroke-width: 0px;
+}
+
+.feature-block {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 20%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.feature-card {
+  padding: 50px;
+  box-shadow: 0 9px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+
+.stats-block {
+  text-align: center;
+}
+
+.github-stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding: 50px;
+  width: 60%;
+}
+
+.github-stats-numbers {
+  font-size: 60px;
+}
+
+.install-block {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+  width: 80%;
+  box-shadow: 0 9px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+
+.install-text {
+  text-align: start;
+}
