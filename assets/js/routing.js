@@ -17,7 +17,7 @@ function startHashRouting() {
         }
         //golemdb
         if (hash == "golemdb") {
-            window.location.href = '404.html';
+            window.location.href = '/projects/golemdb.html';
         }
     }
 }
