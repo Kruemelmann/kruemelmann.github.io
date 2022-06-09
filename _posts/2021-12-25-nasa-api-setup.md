@@ -3,6 +3,7 @@
 layout: blog
 title: nasa api setup
 published: true
+image: '/assets/images/nasa.png'
 tags: space nasa
 
 ---

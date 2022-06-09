@@ -3,6 +3,7 @@
 layout: blog
 title: game of life john conway's
 published: true
+image: '/assets/images/game_of_life.png'
 tags: bazel golang
 
 ---

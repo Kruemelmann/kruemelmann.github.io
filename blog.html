@@ -20,6 +20,7 @@ title: Blog
     <ul class="blog-list">
         {% for post in site.posts %}
             <li class="blog-list-item" onclick="location.href='{{ post.url }}';">
+                <img class="blog-list-item-img" src="{{ post.image }}">
                 <h4 href="{{ post.url }}">
                     <a>{{ post.title }}</a>
                 </h4>
