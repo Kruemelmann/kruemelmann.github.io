@@ -12,6 +12,7 @@ TODOs
 --------
 * add conditional requests to golem (github has a request limit)
     https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
+* filter function does not work after grid refactoring on blog overview
 
 Building
 --------
