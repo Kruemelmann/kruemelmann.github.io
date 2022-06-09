@@ -17,9 +17,9 @@ title: Blog
             results: <span id="results_count"></span>
         </div>
     </div>
-    <ul class="blog-list">
+    <div class="blog-list">
         {% for post in site.posts %}
-            <li class="blog-list-item" onclick="location.href='{{ post.url }}';">
+            <div class="blog-list-item" onclick="location.href='{{ post.url }}';">
                 <img class="blog-list-item-img" src="{{ post.image }}">
                 <h4 href="{{ post.url }}">
                     <a>{{ post.title }}</a>
@@ -36,9 +36,9 @@ title: Blog
                         <span class="tag">{{ tag }}</span>
                     {% endfor %}
                 </h6>
-            </li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
     <script>
         // This block gets executed when the DOM is ready
         //      -> so the list of posts is available here
