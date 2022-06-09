@@ -10,7 +10,7 @@ title: Blog
     <div class="catfilter-container">
         <div>
             {% for tag in site.tags %}
-                <button id="catfilter-{{ tag[0] }}" onclick="toggleCategoryFilter(this.id,'{{ tag[0] }}')" > {{ tag[0] }} </button>
+                <button id="catfilter-{{ tag[0] }}" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'{{ tag[0] }}')" > {{ tag[0] }} </button>
             {% endfor %}
         </div>
         <div>
