@@ -10,8 +10,7 @@ You can find it
 
 TODOs
 --------
-* add conditional requests to golem (github has a request limit)
-    https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
+* add conditional requests to golem (github has a request limit) https://docs.github.com/en/rest/overview/resources-in-the-rest-api#conditional-requests
 
 Building
 --------
