@@ -2,7 +2,7 @@
 
 layout: blog
 title: circle animation
-published: true
+published: false
 tags: golang
 
 ---
