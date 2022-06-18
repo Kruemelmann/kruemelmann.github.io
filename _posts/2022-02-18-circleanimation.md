@@ -9,8 +9,6 @@ tags: golang
 
 Playground for fun animation
 
-
-
 ## play with canvas circle :)
 <div>
     <canvas id="myCanvas" width="1000" height="800"></canvas>
