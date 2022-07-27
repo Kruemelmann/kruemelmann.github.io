@@ -2,14 +2,12 @@
 
 layout: blog
 title: circle animation
-published: true
+published: false
 tags: golang
 
 ---
 
 Playground for fun animation
-
-
 
 ## play with canvas circle :)
 <div>
