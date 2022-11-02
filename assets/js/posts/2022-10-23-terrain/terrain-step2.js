@@ -1,57 +1,47 @@
 'use strict'
 
-//let res = 100;
-//let grid_border_thickness = 0.07;
-let res = 100;
-let grid_border_thickness = 0.6;
+let Canvas_terrain2 = class {
 
-//make 2d grid
-function gen2dArr(cols, rows) {
-    let g = [...Array(rows)].map(x=>Array(cols).fill(0))
-    return g
-}
+    constructor() {
+        var c = document.getElementById("step2_canvas");
+        this.ctx = c.getContext("2d");
 
-//draw the grid
-function drawGrid(ctx, grid) {
-    ctx.lineWidth = grid_border_thickness;
-    for (var i = 0; i < grid.length * (100 / res); i++) {
-        for (var j = 0; j < grid.length * (100 / res); j++) {
-            let xcor = i * res;
-            let ycor = j * res;
+        let cols = c.width / res;
+        let rows = c.height / res;
+        (async () => {
+            this.grid = await this.gen2dArr(cols, rows);
+            this.drawGrid();
+            this.animate();
+        })()
+    }
 
-            ctx.beginPath();
-            ctx.fillStyle = "white";
-            ctx.rect(xcor, ycor, res, res);
-            ctx.fill()
-            ctx.stroke()
+    //draw the grid
+    drawGrid() {
+        this.ctx.lineWidth = 0.6;
+        for (var i = 0; i < this.grid.length * (100 / res); i++) {
+            for (var j = 0; j < this.grid.length * (100 / res); j++) {
+                let xcor = i * res;
+                let ycor = j * res;
+
+                this.ctx.beginPath();
+                this.ctx.fillStyle = "white";
+                this.ctx.rect(xcor, ycor, res, res);
+                this.ctx.fill()
+                this.ctx.stroke()
+            }
         }
     }
-}
-
-function updateRes(newres) {
-    res = newres;
-}
-
-(async () => {
-    var c = document.getElementById("step1_canvas");
-    var ctx = c.getContext("2d");
-    let cols = c.width / res;
-    let rows = c.height / res;
-    let grid = await gen2dArr(cols, rows)
-    drawGrid(ctx, grid);
-
-    //actualy play the game
-    function test(){
-        setTimeout(function(){
-            drawGrid(ctx, grid);
-            test()
+    animate() {
+        setTimeout(() => {
+            this.drawGrid();
+            this.animate();
         }, 1000);
     }
-    test()
-})();
-
-
-
-function isHidden(el) {
-    return (el.offsetParent === null)
+    //make 2d grid
+    gen2dArr(cols, rows) {
+        let g = [...Array(rows)].map(x=>Array(cols).fill(0))
+        return g
+    }
 }
+
+
