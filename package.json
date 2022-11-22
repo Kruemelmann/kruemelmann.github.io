@@ -10,6 +10,6 @@
     "cypress:open": "cypress open --config-file ./config/cypress.json"
   },
   "devDependencies": {
-    "cypress": "11.1.0"
+    "cypress": "11.2.0"
   }
 }
