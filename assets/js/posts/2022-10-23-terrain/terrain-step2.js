@@ -1,7 +1,6 @@
 'use strict'
 
 let Canvas_terrain2 = class {
-
     constructor() {
         var c = document.getElementById("step2_canvas");
         this.ctx = c.getContext("2d");

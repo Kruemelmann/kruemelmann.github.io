@@ -21,7 +21,7 @@ func main() {
 	ctx := setup()
 	resetBackground(ctx, "black")
 
-	man := brot.NewMandelBrot(100, int(canvasSize.w), int(canvasSize.h))
+	man := brot.NewMandelBrot(200, int(canvasSize.w), int(canvasSize.h))
 	arr := man.MandelBrotFunc()
 
 	//copy arr to image
