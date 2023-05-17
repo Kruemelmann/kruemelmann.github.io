@@ -81,10 +81,10 @@ gazelle_dependencies(go_repository_default_config = "@//:WORKSPACE.bazel")
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "f445e1637a978bd42f9821ad44d6ea71ac420a2f2846804597e1ad83c3022fd6",
-    strip_prefix = "protobuf-4.23.0",
+    sha256 = "12ba4ad04e6de473d4c216da9964c7d65f41660d57185017dcf551e1be8b6180",
+    strip_prefix = "protobuf-4.23.1",
     urls = [
-        "https://github.com/protocolbuffers/protobuf/archive/v4.23.0.tar.gz",
+        "https://github.com/protocolbuffers/protobuf/archive/v4.23.1.tar.gz",
     ],
 )
 
