@@ -5,7 +5,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"syscall/js"
-	"time"
 
 	"github.com/kruemelmann/kruemelmann.github.io/src/wasm/go/brot"
 )
@@ -21,7 +20,7 @@ func main() {
 	ctx := setup()
 	resetBackground(ctx, "black")
 
-	man := brot.NewMandelBrot(200, int(canvasSize.w), int(canvasSize.h))
+	man := brot.NewMandelBrot(100, int(canvasSize.w), int(canvasSize.h))
 	arr := man.MandelBrotFunc()
 
 	//copy arr to image
@@ -33,7 +32,6 @@ func main() {
 	jsImg = js.Global().Call("eval", "new Image()")
 	cb := js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		go func() {
-			time.Sleep(2 * time.Second)
 			ctx.Call("drawImage", jsImg, 0, 0)
 		}()
 		return nil

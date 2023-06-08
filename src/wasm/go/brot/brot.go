@@ -38,11 +38,10 @@ func (m *MandelBrot) MandelBrotFunc() [][]color.RGBA {
 			y := float64(j)
 			img_part := im_start + (y/float64(m.Height))*(im_end-im_start)
 			rel_part := re_start + (x/float64(m.Width))*(re_end-re_start)
-			var c complex128 = complex(rel_part, img_part)
-			ret := pixelcolor(c, m.MaxIteration)
+			ret := pixelcolor(complex(rel_part, img_part), m.MaxIteration)
 
 			//blue inverted
-			col := int(ret * 255 / m.MaxIteration)
+			col := ret * 255 / m.MaxIteration
 
 			//yellow and colorful
 			//col := 255 - int(ret*255/m.MaxIteration)
@@ -78,7 +77,7 @@ func generateImgArr(width, height int) [][]color.RGBA {
 	return m
 }
 
-//move to utils
+// move to utils
 func color8BitToRGBA(c uint8) color.RGBA {
 	return color.RGBA{
 		R: (c >> 5) * 32,

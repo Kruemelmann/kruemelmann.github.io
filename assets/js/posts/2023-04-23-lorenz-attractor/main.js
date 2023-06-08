@@ -37,46 +37,40 @@ class Dot {
         this.project();
         ctx.globalAlpha = Math.abs(1 - this.z / width);
         ctx.fillStyle = color;
-        ctx.fillRect(
-            this.xProjected - this.radius,
-            this.yProjected - this.radius,
-            this.radius,
-            this.radius);
+        ctx.fillRect(this.yProjected - this.radius, this.xProjected - this.radius, this.radius, this.radius);
     }
-    connect(dot) {
-        ctx.beginPath();
-        ctx.moveTo(point.x, point.y);
-        ctx.lineTo(arr[index + 1].x, arr[index + 1].y);
-        ctx.stroke();
+}
+
+var rgb_arr = [100, 100, 100]
+const updateColor = () => {
+    var i = Math.round(Math.random() * (3));
+    let tmp = rgb_arr
+    if (Math.random() < 0.5) {
+        tmp[i] = Math.abs(tmp[i] + 10) % 255;
+    } else {
+        tmp[i] = Math.abs(tmp[i] - 10) % 255;
     }
+    rgb_arr = tmp
 }
 
 let color_index = 0;
 const drawLorenz = () => {
     let dx = (a * (y - x)) * dt;
-    let dy = (x * (b - z) - y) * dt;
-    let dz = (x * y - c * z) * dt;
+    let dy = ((x * (b - z)) - y) * dt;
+    let dz = ((x * y) - (c * z)) * dt;
     x = x + dx;
     y = y + dy;
     z = z + dz;
-
-    let R = (color_index >> 5) * 32
-    let G = ((color_index & 28) >> 2) * 32
-    let B = (color_index & 3) * 64,
-    color = "rgb(" + R + ", " + G + ", " + B + ")";
-    color_index++;
-
+    let color = "rgb("+rgb_arr[0]+","+rgb_arr[1]+","+rgb_arr[2]+")";
     let d = new Dot(x,y,z)
     d.draw(color)
 }
 
-
 (async () => {
     const render = () => {
         drawLorenz();
+        updateColor();
         window.requestAnimationFrame(render);
     }
     render()
 })()
-
-
