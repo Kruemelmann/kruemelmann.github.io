@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+</head>
+
+    
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- own scripts -->
+
+<script src="/assets/js/routing.js"></script>
+<script src="/assets/js/cookie.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/filter.js"></script>
+<script src="/assets/js/scrolldown.js"></script>
+
+
+    <body>
+        <header>
+    <nav>
+    <div class="logo">
+        <a href="/">
+            kruemelmann
+        </a>
+    </div>
+    <ul class="navbar">
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/" >
+                    Home
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/projects.html" >
+                    Projects
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/publications.html" >
+                    Publications
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/blog.html" >
+                    Blog
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/about.html" >
+                    About
+                </a>
+            </li>
+        
+        
+            <li class="navbar-item sozials">
+                <a href="https://github.com/kruemelmann" target=”_blank”
+                    
+                       class="fa fa-github"
+                    
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://twitter.com/kruemlmann" target=”_blank”
+                    
+                    
+                       class="fa fa-twitter"
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://www.linkedin.com/in/lukas-ehlers-409480232/" target=”_blank”
+                    
+                    
+                    
+                       class="fa fa-linkedin"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+</header>
+
+        <div class="main-content">
+            
+                <div class="page-body">
+    <h1>Blog</h1>
+    <div class="searchbar-container">
+        <input type="text" placeholder="" id="searchbar" onkeyup="filterBlogPosts()">
+    </div>
+    <div class="catfilter-container">
+        <div>
+            
+                <button id="catfilter-jekyll" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'jekyll')" > jekyll </button>
+            
+                <button id="catfilter-golang" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'golang')" > golang </button>
+            
+                <button id="catfilter-bazel" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'bazel')" > bazel </button>
+            
+                <button id="catfilter-vim" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'vim')" > vim </button>
+            
+                <button id="catfilter-terminal" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'terminal')" > terminal </button>
+            
+                <button id="catfilter-tmux" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'tmux')" > tmux </button>
+            
+                <button id="catfilter-space" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'space')" > space </button>
+            
+                <button id="catfilter-nasa" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'nasa')" > nasa </button>
+            
+                <button id="catfilter-latex" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'latex')" > latex </button>
+            
+                <button id="catfilter-math" class="catfilter-item" onclick="toggleCategoryFilter(this.id,'math')" > math </button>
+            
+        </div>
+        <div>
+            results: <span id="results_count"></span>
+        </div>
+    </div>
+    <ul class="blog-list">
+        
+            <li class="blog-list-item" onclick="location.href='/2023/04/23/lorenz-attractor.html';">
+                <h4 href="/2023/04/23/lorenz-attractor.html">
+                    <a>lorenz attractor</a>
+                </h4>
+                <h6>
+                    23 April 2023
+                </h6>
+                <div>
+                    <h1 id="lorenz-attractor">Lorenz Attractor</h1>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">math</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2022/10/23/terrain.html';">
+                <h4 href="/2022/10/23/terrain.html">
+                    <a>terrain generator</a>
+                </h4>
+                <h6>
+                    23 October 2022
+                </h6>
+                <div>
+                    <p>In this Post I will show you how to build a ‘fly-over-terrain’ animation using perlin noise.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">math</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2022/05/01/komodo.html';">
+                <h4 href="/2022/05/01/komodo.html">
+                    <a>komodo</a>
+                </h4>
+                <h6>
+                    1 May 2022
+                </h6>
+                <div>
+                    <h1 id="komodo">Komodo</h1>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">golang</span>
+                    
+                        <span class="tag">latex</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2022/01/05/gameoflife.html';">
+                <h4 href="/2022/01/05/gameoflife.html">
+                    <a>game of life john conway's</a>
+                </h4>
+                <h6>
+                    5 January 2022
+                </h6>
+                <div>
+                    <p>Playground for my john conways game of life implementation. for now its just a playground not an article (maybe later)</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">bazel</span>
+                    
+                        <span class="tag">golang</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/12/27/bazel_build_grpc.html';">
+                <h4 href="/2021/12/27/bazel_build_grpc.html">
+                    <a>how you can build grpc with bazel</a>
+                </h4>
+                <h6>
+                    27 December 2021
+                </h6>
+                <div>
+                    <p>In this article I show how I am building grpc and golang
+with bazel and still have the option to work with an editor
+like vim.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">bazel</span>
+                    
+                        <span class="tag">golang</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/12/25/nasa-api-setup.html';">
+                <h4 href="/2021/12/25/nasa-api-setup.html">
+                    <a>nasa api setup</a>
+                </h4>
+                <h6>
+                    25 December 2021
+                </h6>
+                <div>
+                    <p>In this article i would like to show you how you can play around with the nasa API.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">space</span>
+                    
+                        <span class="tag">nasa</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/11/19/tmux-iconbar.html';">
+                <h4 href="/2021/11/19/tmux-iconbar.html">
+                    <a>tmux-iconbar</a>
+                </h4>
+                <h6>
+                    19 November 2021
+                </h6>
+                <div>
+                    <p>TODO write what tmux-iconbar is and how it works:)</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">tmux</span>
+                    
+                        <span class="tag">terminal</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/11/19/pathfind.vim.html';">
+                <h4 href="/2021/11/19/pathfind.vim.html">
+                    <a>pathfind.vim</a>
+                </h4>
+                <h6>
+                    19 November 2021
+                </h6>
+                <div>
+                    <p>pathfind is my first small Vim Plugin. It wrapps around grep and searches all underlying files for a specific pattern.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">vim</span>
+                    
+                        <span class="tag">terminal</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/11/19/jekyll-setup.html';">
+                <h4 href="/2021/11/19/jekyll-setup.html">
+                    <a>jekyll-setup</a>
+                </h4>
+                <h6>
+                    19 November 2021
+                </h6>
+                <div>
+                    <p>In this article i would like to show you how to install the required tools to build this blog.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                        <span class="tag">jekyll</span>
+                    
+                        <span class="tag">golang</span>
+                    
+                        <span class="tag">bazel</span>
+                    
+                </h6>
+            </li>
+        
+            <li class="blog-list-item" onclick="location.href='/2021/11/18/welcome.html';">
+                <h4 href="/2021/11/18/welcome.html">
+                    <a>welcome to my new blog :)</a>
+                </h4>
+                <h6>
+                    18 November 2021
+                </h6>
+                <div>
+                    <p>In this blog i am going to write some stuff about my projects on github
+and document some ideas.</p>
+
+                </div>
+                <h6>
+                    tags:
+                    
+                </h6>
+            </li>
+        
+    </ul>
+    <script>
+        // This block gets executed when the DOM is ready
+        //      -> so the list of posts is available here
+        // self executing function here
+        (function() { // the DOM will be available here
+            filterBlogPosts()
+        })();
+    </script>
+</div>
+
+            
+            
+        </div>
+    </body>
+    <footer>
+    <div class="foot-container">
+
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>kruemelmann's website</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+</head>
+
+    
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- own scripts -->
+
+<script src="/assets/js/routing.js"></script>
+<script src="/assets/js/cookie.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/filter.js"></script>
+<script src="/assets/js/scrolldown.js"></script>
+
+
+    <body>
+        <header>
+    <nav>
+    <div class="logo">
+        <a href="/">
+            kruemelmann
+        </a>
+    </div>
+    <ul class="navbar">
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/" >
+                    Home
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/projects.html" >
+                    Projects
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/publications.html" >
+                    Publications
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/blog.html" >
+                    Blog
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/about.html" >
+                    About
+                </a>
+            </li>
+        
+        
+            <li class="navbar-item sozials">
+                <a href="https://github.com/kruemelmann" target=”_blank”
+                    
+                       class="fa fa-github"
+                    
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://twitter.com/kruemlmann" target=”_blank”
+                    
+                    
+                       class="fa fa-twitter"
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://www.linkedin.com/in/lukas-ehlers-409480232/" target=”_blank”
+                    
+                    
+                    
+                       class="fa fa-linkedin"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+</header>
+
+        <div class="main-content">
+            
+                <!-- stars container -->
+<canvas id="stars-container">
+</canvas>
+
+<!-- import wasm scripts -->
+<!-- Scripts(wasm) -->
+<script src="https://golang.org/misc/wasm/wasm_exec.js"></script>
+
+<script type="text/javascript">
+    async function run(fileUrl) {
+        try {
+            const file = await fetch(fileUrl);
+            const buffer = await file.arrayBuffer();
+            const go = new Go();
+            const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
+            go.run(instance);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    setTimeout(() => run("/assets/wasm/game.wasm"));
+</script>
+
+
+<div class="headline">
+    <h1 class="headline-item">welcome</h1>
+    <span class="headline-item">to my little website playground</span>
+</div>
+
+<!-- scroll down button -->
+<a class="scroll-down" onclick="scrollDown()">
+    <i class="fa fa-angle-down"></i>
+</a>
+
+<!-- cards -->
+<div class="card-container">
+    
+    <div class="card" onclick="location.href='/2023/04/23/lorenz-attractor.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>lorenz attractor</a></b></h4>
+            <h5>April 23, 2023</h5>
+            <p><h1 id="lorenz-attractor">Lorenz Attractor</h1>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2022/10/23/terrain.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>terrain generator</a></b></h4>
+            <h5>October 23, 2022</h5>
+            <p><p>In this Post I will show you how to build a ‘fly-over-terrain’ animation using perlin noise.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2022/05/01/komodo.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>komodo</a></b></h4>
+            <h5>May  1, 2022</h5>
+            <p><h1 id="komodo">Komodo</h1>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2022/01/05/gameoflife.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>game of life john conway's</a></b></h4>
+            <h5>January  5, 2022</h5>
+            <p><p>Playground for my john conways game of life implementation. for now its just a playground not an article (maybe later)</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/12/27/bazel_build_grpc.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>how you can build grpc with bazel</a></b></h4>
+            <h5>December 27, 2021</h5>
+            <p><p>In this article I show how I am building grpc and golang
+with bazel and still have the option to work with an editor
+like vim.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/12/25/nasa-api-setup.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>nasa api setup</a></b></h4>
+            <h5>December 25, 2021</h5>
+            <p><p>In this article i would like to show you how you can play around with the nasa API.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/11/19/tmux-iconbar.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>tmux-iconbar</a></b></h4>
+            <h5>November 19, 2021</h5>
+            <p><p>TODO write what tmux-iconbar is and how it works:)</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/11/19/pathfind.vim.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>pathfind.vim</a></b></h4>
+            <h5>November 19, 2021</h5>
+            <p><p>pathfind is my first small Vim Plugin. It wrapps around grep and searches all underlying files for a specific pattern.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/11/19/jekyll-setup.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>jekyll-setup</a></b></h4>
+            <h5>November 19, 2021</h5>
+            <p><p>In this article i would like to show you how to install the required tools to build this blog.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+    <div class="card" onclick="location.href='/2021/11/18/welcome.html';" style="cursor: pointer;">
+        <div class="container" >
+            <h4><b><a>welcome to my new blog :)</a></b></h4>
+            <h5>November 18, 2021</h5>
+            <p><p>In this blog i am going to write some stuff about my projects on github
+and document some ideas.</p>
+</p>
+          <!-- only show last 5 posts, others can be scrolled -->
+        </div>
+    </div>
+    
+</div>
+
+
+            
+            
+        </div>
+    </body>
+    <footer>
+    <div class="foot-container">
+
+    </div>
+</footer>
+
+</html>

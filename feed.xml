@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://kruemelmann.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kruemelmann.github.io/" rel="alternate" type="text/html" /><updated>2023-09-12T20:50:40+00:00</updated><id>https://kruemelmann.github.io/feed.xml</id><entry><title type="html">lorenz attractor</title><link href="https://kruemelmann.github.io/2023/04/23/lorenz-attractor.html" rel="alternate" type="text/html" title="lorenz attractor" /><published>2023-04-23T00:00:00+00:00</published><updated>2023-04-23T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2023/04/23/lorenz-attractor</id><content type="html" xml:base="https://kruemelmann.github.io/2023/04/23/lorenz-attractor.html"><![CDATA[<h1 id="lorenz-attractor">Lorenz Attractor</h1>
+
+<p>Like the terrain post this is just a playground for me to tinker around with the lorenz attractor.</p>
+
+<div>
+    <canvas id="lorenz_canvas" width="1000" height="1000"></canvas>
+</div>
+
+<script src="/assets/js/posts/2023-04-23-lorenz-attractor/main.js"></script>]]></content><author><name></name></author><category term="math" /><summary type="html"><![CDATA[Lorenz Attractor]]></summary></entry><entry><title type="html">terrain generator</title><link href="https://kruemelmann.github.io/2022/10/23/terrain.html" rel="alternate" type="text/html" title="terrain generator" /><published>2022-10-23T00:00:00+00:00</published><updated>2022-10-23T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2022/10/23/terrain</id><content type="html" xml:base="https://kruemelmann.github.io/2022/10/23/terrain.html"><![CDATA[<p>In this Post I will show you how to build a ‘fly-over-terrain’ animation using perlin noise.</p>
+
+<h2 id="step-1-making-a-rectangle-grid">Step 1: Making a rectangle grid</h2>
+
+<p>For step one I just recycled the source code from my game of life playground post. <a href="/2022/01/05/gameoflife.html">Game of Life Playground</a></p>
+<div>
+    <input type="button" onclick="updateRes(10)" value="10" />
+    <input type="button" onclick="updateRes(50)" value="50" />
+    <input type="button" onclick="updateRes(100)" value="100" />
+    <canvas id="step1_canvas" width="1000" height="1000"></canvas>
+    <script src="/assets/js/posts/2022-10-23-terrain/terrain-step1.js"></script>
+</div>
+
+<h2 id="step-2-making-a-triangle-grid">Step 2: Making a triangle grid</h2>
+
+<div>
+    <input type="button" onclick="updateRes(10)" value="10" />
+    <input type="button" onclick="updateRes(50)" value="50" />
+    <input type="button" onclick="updateRes(100)" value="100" />
+    <canvas id="step2_canvas" width="1000" height="1000"></canvas>
+    <script src="/assets/js/posts/2022-10-23-terrain/terrain-step2.js"></script>
+</div>
+
+<script src="/assets/js/posts/2022-10-23-terrain/general.js"></script>]]></content><author><name></name></author><category term="math" /><summary type="html"><![CDATA[In this Post I will show you how to build a ‘fly-over-terrain’ animation using perlin noise.]]></summary></entry><entry><title type="html">komodo</title><link href="https://kruemelmann.github.io/2022/05/01/komodo.html" rel="alternate" type="text/html" title="komodo" /><published>2022-05-01T00:00:00+00:00</published><updated>2022-05-01T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2022/05/01/komodo</id><content type="html" xml:base="https://kruemelmann.github.io/2022/05/01/komodo.html"><![CDATA[<h1 id="komodo">Komodo</h1>
+
+<p>TODO write a post about how to use komodo and why its cool:)</p>]]></content><author><name></name></author><category term="golang" /><category term="latex" /><summary type="html"><![CDATA[Komodo]]></summary></entry><entry><title type="html">game of life john conway’s</title><link href="https://kruemelmann.github.io/2022/01/05/gameoflife.html" rel="alternate" type="text/html" title="game of life john conway’s" /><published>2022-01-05T00:00:00+00:00</published><updated>2022-01-05T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2022/01/05/gameoflife</id><content type="html" xml:base="https://kruemelmann.github.io/2022/01/05/gameoflife.html"><![CDATA[<p>Playground for my john conways game of life implementation. for now its just a playground not an article (maybe later)</p>
+
+<h2 id="2d-game-of-live">2d game of live</h2>
+<div>
+    <canvas id="myCanvas" width="1000" height="800"></canvas>
+    <script src="/assets/js/posts/2022-01-05-gameoflife/2dgame.js"></script>
+</div>
+
+<h2 id="3d-game-of-live">3d game of live</h2>
+
+<div>
+    <div id="three-container"> </div>
+	<style>
+		a {
+			color: #08f;
+		}
+	</style>
+	<script type="module" src="/assets/js/posts/2022-01-05-gameoflife/3dgame.js"></script>
+</div>]]></content><author><name></name></author><category term="bazel" /><category term="golang" /><summary type="html"><![CDATA[Playground for my john conways game of life implementation. for now its just a playground not an article (maybe later)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kruemelmann.github.io/assets/images/game_of_life.png" /><media:content medium="image" url="https://kruemelmann.github.io/assets/images/game_of_life.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">how you can build grpc with bazel</title><link href="https://kruemelmann.github.io/2021/12/27/bazel_build_grpc.html" rel="alternate" type="text/html" title="how you can build grpc with bazel" /><published>2021-12-27T00:00:00+00:00</published><updated>2021-12-27T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/12/27/bazel_build_grpc</id><content type="html" xml:base="https://kruemelmann.github.io/2021/12/27/bazel_build_grpc.html"><![CDATA[<p>In this article I show how I am building grpc and golang
+with bazel and still have the option to work with an editor
+like vim.</p>
+
+<hr />
+
+<p><strong>Disclaimer</strong></p>
+
+<p>Status: Draft this article is not finished yet</p>
+
+<p>The following article covers an idea of mine:) so please if you think thats a bad one open an issue and we can talk about.
+Dont hate or insult thats not the way how this works;)</p>
+
+<hr />
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+  <li><a href="#general">General</a></li>
+  <li><a href="#ideas">Ideas</a></li>
+</ol>
+
+<h2 id="general">General</h2>
+<p>First of all I would like to say if you get to this problem.
+There are other ideas that are much better than mine.
+For example if you search a bit you will find an <a href="https://github.com/bazelbuild/rules_go/issues/512">issue</a> about
+this problem on github in rules_go.
+If you find a good solution to this problem please open an issue
+as well, i would be happy to get this problem out of the way.
+For all that don’t know what I am talking about I quickly
+explain the problem. For example you have a go-based
+microservice and want to communicate via grpc you need to
+compile your proto files to go code in order to use them inside your source code.
+You can build the grpc files with the method <a href="https://github.com/bazelbuild/rules_go/blob/master/proto/core.rst#go_proto_library">go_proto_libary</a>
+declared and documented in the <a href="https://github.com/bazelbuild/rules_go/blob/master/proto/core.rst#go-protocol-buffers">rules_go</a>
+Two ways of working with proto buffer and bazel are described in
+the documentation.</p>
+
+<p>The first is to generate to code at build time that’s the
+“cleanest” way of doing this. Why you ask? Simply because if
+bazel builds your proto buffers you get all the benefits of
+bazel like hermetic, fast builds etc. This works of course <em>but</em>
+If you let bazel build the files they are encapsulated from your
+editor or IDE. So you get no code completion or syntax
+highlighting. That’s painful especially if you are working on
+a bigger microservice than hello world or a small chat:)</p>
+
+<p>The second way that is described in the docs is to pregenerate
+the files by hand and disable gazelle on this files.
+That easy but you lose many of the advantages of bazel in my
+opinion. If you check the into git you waste space since
+you don’t need the generated code because everyone can
+generate it locally from the .proto files.
+Also you indirectly  break the hermetic builds because
+not bazel is building the files but the one that is compiling
+the proto file with all its local settings and configurations.
+The advantage of this way is that you get code completion and
+all the nice editor/IDE features.</p>
+
+<h2 id="ideas">Ideas</h2>
+<p>Now I will show how I am doing it. I am not happy about this
+but for now there is no other way as far as I know.</p>
+
+<h3 id="generate-proto-files-by-hand">Generate proto-Files by hand</h3>
+<p>This is similar to the second way mentioned above.</p>
+
+<p>In the root of my project I put a bash script that is called
+<em>rebuild_pb_grpc.sh</em>.
+So if others builds it, everyone uses the same build command.</p>
+
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>
+#!/bin/bash
+
+#Build the xyz
+protoc -I=. --go_out=. --go-grpc_out=. pkg/pb/xyz.proto
+
+</pre></td>
+</tr></table>
+</div>
+
+<p>All the .proto files are located in the pkg/pb/ folder.
+Next I put a BUILD file into the folder which excludes all the
+.proto files. It only contains one line to instruct gazelle
+to not generate build targets for it.</p>
+
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>
+<span style="color:#777"># gazelle:exclude *.proto</span>
+
+</pre></td>
+</tr></table>
+</div>
+
+<p>In the .proto file I configure where the grpc files should be
+stored. To easily find them I generate a folder next to the
+proto files that have the same name as these file.</p>
+
+<div class="language-proto highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>
+syntax = &quot;proto3&quot;;
+option go_package = &quot;pkg/pb/xyz;xyz&quot;;
+
+</pre></td>
+</tr></table>
+</div>
+
+<p>After that i call gazelle which finds the new folder and
+generates targets for it.</p>
+
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>
+bazel run //:gazelle
+
+</pre></td>
+</tr></table>
+</div>
+
+<p>Now you can import it with the full path and bazel is able to
+cache them just as normal go files.</p>
+
+<p>(Optionally you can create a .gitignore and ignore the folders
+but I check them into git so that only the once who want to
+work on the .proto files need the compiler locally and
+all others don’t need it.)</p>
+
+<h3 id="use-the-go_proto_checkedin_test">Use the go_proto_checkedin_test</h3>
+
+<p>TODO before I write about this I have to test this so:) WIP</p>
+
+<p><a href="https://github.com/bazelbuild/buildtools/blob/master/build_proto/BUILD.bazel">example</a></p>
+
+<h3 id="use-a-gopackage-driver">Use a gopackage driver</h3>
+
+<p>TODO before I write about this I have to test this so:) WIP</p>
+
+<p><a href="https://github.com/bazelbuild/rules_go/pull/2858">pull-request</a></p>
+
+<p><a href="https://github.com/bazelbuild/rules_go/wiki/Editor-and-tool-integration">docs</a></p>]]></content><author><name></name></author><category term="bazel" /><category term="golang" /><summary type="html"><![CDATA[In this article I show how I am building grpc and golang with bazel and still have the option to work with an editor like vim.]]></summary></entry><entry><title type="html">nasa api setup</title><link href="https://kruemelmann.github.io/2021/12/25/nasa-api-setup.html" rel="alternate" type="text/html" title="nasa api setup" /><published>2021-12-25T00:00:00+00:00</published><updated>2021-12-25T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/12/25/nasa-api-setup</id><content type="html" xml:base="https://kruemelmann.github.io/2021/12/25/nasa-api-setup.html"><![CDATA[<p>In this article i would like to show you how you can play around with the nasa API.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<div>
+    <style>
+    .nasaform{
+        border: solid white 1px;
+        padding: 10px;
+    }
+    </style>
+    <script>
+    function setAPItoCookie(e) {
+        let form = new FormData(e.target);
+        let apikey = form.get("apikey");
+        console.log(apikey)
+    }
+    </script>
+    <form class="nasaform" onsubmit="setAPItoCookie(event)">
+    <div>
+    To call the nasa API you need a valid API key available if not then you need to accept some limitations because internal i then use the "DEMO_KEY".
+    Please enter your API key in this input field and submit it by using the button:
+    </div>
+        <label for="apikey">Your nasa API-key:</label>
+        <input type="text" id="apikey" name="apikey" />
+        <input type="submit" value="Set api key to cookie" />
+    </form>
+</div>
+
+<p>Now that we got the requirements all setup we can start using the API.</p>
+
+<h2 id="example-get-the-picture-of-the-day">Example Get the Picture of the day</h2>
+
+<p>Lets start with a very easy example.
+In the following canvas you get the image of the day from the Nasa API.</p>
+
+<div>
+    <img id="picoftheday" style="width: 100%; height=auto;" />
+    <div id="videooftheday-container" style="position: relative;padding-bottom: 56.25%; /* 16:9 */height: 0;">
+        <iframe id="videooftheday" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></iframe>
+    </div>
+    <div>
+        <div>Title: <span id="picoftheday_title"></span></div>
+        <div>Copyright: <span id="picoftheday_copyright"></span></div>
+    </div>
+    <script>
+    (async () => {
+        let response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+        let res_parsed = await response.json();
+
+        switch (res_parsed.media_type) {
+            case "image":
+                document.getElementById("picoftheday").src=res_parsed.hdurl;
+                document.getElementById("videooftheday-container").style.display="none";
+                document.getElementById("picoftheday").style.display="";
+                break;
+            case "video":
+                document.getElementById("videooftheday").src=res_parsed.url;
+                document.getElementById("picoftheday").style.display="none";
+                document.getElementById("videooftheday-container").style.display="";
+                break;
+            default:
+                console.log("Error loading maybe to many requests")
+        }
+
+        //set some metadata about the image
+        document.getElementById('picoftheday_title').innerText = res_parsed.title
+        if(res_parsed.copyright != undefined) {
+            document.getElementById('picoftheday_copyright').innerText = res_parsed.copyright
+        } else {
+            document.getElementById('picoftheday_copyright').innerText = "none"
+        }
+    })();
+    </script>
+</div>
+
+<h2 id="programmatically-access">Programmatically access</h2>
+
+<p>If you set your API key to the cookie you can make ca ~1000 Requests per hour and per IP.
+If you did not set the key I internally use the ‘DEMO_KEY’ which can call the API 30 times
+per hour per IP.</p>
+
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>let response = await fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY</span><span style="color:#710">'</span></span>);
+<span style="color:#777">//parse the response</span>
+let res_parsed = await response.json();
+</pre></td>
+</tr></table>
+</div>
+
+<p>This code snippet fetches a JSON object from NASA’s API. Depending on the media_type which
+can be found inside this JSON object you either get a picture or a video.</p>
+
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">switch</span> (res_parsed.media_type) {
+  <span style="color:#080;font-weight:bold">case</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">image</span><span style="color:#710">&quot;</span></span>:
+  <span style="color:#080;font-weight:bold">case</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">video</span><span style="color:#710">&quot;</span></span>:
+}
+</pre></td>
+</tr></table>
+</div>
+<p>You can switch-case this so you can handle the image in a different way than the video.
+All in all if you came to this point you get a positive response from the API so everything that I will show now is completely optional.</p>
+
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">picoftheday_title</span><span style="color:#710">'</span></span>).innerText = res_parsed.title
+<span style="color:#080;font-weight:bold">if</span>(res_parsed.copyright != <span style="color:#069">undefined</span>) {
+    document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">picoftheday_copyright</span><span style="color:#710">'</span></span>).innerText = res_parsed.copyright
+} <span style="color:#080;font-weight:bold">else</span> {
+    document.getElementById(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">picoftheday_copyright</span><span style="color:#710">'</span></span>).innerText = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">none</span><span style="color:#710">&quot;</span></span>
+}
+</pre></td>
+</tr></table>
+</div>
+<p>Independently of the media_type you get a ‘title’ entry in the JSON. Plus if the media
+has a copyright you get an entry for this as well.</p>
+
+<h2 id="query-parameters">Query Parameters</h2>
+<h3 id="api_key-parameter">‘api_key’-Parameter</h3>
+
+<p>The api_key is the most important parameter of them all:) if you don’t set it you will get
+no valid response from the API. Like mentioned above you can generate it <a href="https://api.nasa.gov/">here</a></p>
+
+<h4 id="example">Example</h4>
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>let response = await fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY</span><span style="color:#710">'</span></span>);
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="data-parameter">‘data’-Parameter</h3>
+
+<p>If you want a specific ‘picture of the day’ you can get this as well. You just need to
+add a query parameter to your request and the API will give you the image/video of this day.</p>
+
+<h4 id="example-1">Example</h4>
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>let response = await fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&amp;date=2021-01-01</span><span style="color:#710">'</span></span>);
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="count-parameter">‘count’-Parameter</h3>
+
+<p>If you want to get a random selection of images of the day than you can add the count
+parameter to you request and you get a selection of images. The parameter is called
+count because the selection has <em>count</em> elements.</p>
+
+<h4 id="example-2">Example</h4>
+<div class="language-javascript highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>let response = await fetch(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&amp;count=5</span><span style="color:#710">'</span></span>);
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="other-parameters">Other Parameters</h3>
+
+<p>The parameter above are just the three in my opinion most interesting once but there are more:)
+you can find the others <a href="https://api.nasa.gov/#apod">here</a>.</p>
+
+<hr />
+<p><strong>Fun Fact</strong></p>
+
+<p>I dont know if this is documented somewhere but if you want to scroll down on the
+api.nasa.gov page you can add for example an <em>#apod</em> anchor to the route and a
+script will try to scroll down 1/2 second after you open the page.
+I found this by reading the source code:) and think this is very handy.</p>
+
+<hr />]]></content><author><name></name></author><category term="space" /><category term="nasa" /><summary type="html"><![CDATA[In this article i would like to show you how you can play around with the nasa API.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://kruemelmann.github.io/assets/images/nasa.png" /><media:content medium="image" url="https://kruemelmann.github.io/assets/images/nasa.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">tmux-iconbar</title><link href="https://kruemelmann.github.io/2021/11/19/tmux-iconbar.html" rel="alternate" type="text/html" title="tmux-iconbar" /><published>2021-11-19T00:00:00+00:00</published><updated>2021-11-19T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/11/19/tmux-iconbar</id><content type="html" xml:base="https://kruemelmann.github.io/2021/11/19/tmux-iconbar.html"><![CDATA[<p>TODO write what tmux-iconbar is and how it works:)</p>]]></content><author><name></name></author><category term="tmux" /><category term="terminal" /><summary type="html"><![CDATA[TODO write what tmux-iconbar is and how it works:)]]></summary></entry><entry><title type="html">pathfind.vim</title><link href="https://kruemelmann.github.io/2021/11/19/pathfind.vim.html" rel="alternate" type="text/html" title="pathfind.vim" /><published>2021-11-19T00:00:00+00:00</published><updated>2021-11-19T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/11/19/pathfind.vim</id><content type="html" xml:base="https://kruemelmann.github.io/2021/11/19/pathfind.vim.html"><![CDATA[<p>pathfind is my first small Vim Plugin. It wrapps around grep and searches all underlying files for a specific pattern.</p>
+
+<p>Using <a href="https://github.com/junegunn/vim-plug">vim-plug</a>:</p>
+
+<div class="language-vim highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>Plug 'kruemelmann/pathfind.vim'
+</pre></td>
+</tr></table>
+</div>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="mappings">Mappings</h3>
+
+<ul>
+  <li><code>&lt;leader&gt;F</code> if you highlighted a word with <code>*</code> it will search for the highlighted pattern</li>
+  <li><code>&lt;leader&gt;F</code> if nothing is highlighted or you turned of with <code>:nohl</code> you get a input promt</li>
+</ul>
+
+<hr />
+<p><strong>NOTE</strong></p>
+
+<p>Watch out where you are running this. Takes long if it searches many files.
+You can stop it by pressing <code>&lt;cr&gt;c</code>.</p>
+
+<hr />]]></content><author><name></name></author><category term="vim" /><category term="terminal" /><summary type="html"><![CDATA[pathfind is my first small Vim Plugin. It wrapps around grep and searches all underlying files for a specific pattern.]]></summary></entry><entry><title type="html">jekyll-setup</title><link href="https://kruemelmann.github.io/2021/11/19/jekyll-setup.html" rel="alternate" type="text/html" title="jekyll-setup" /><published>2021-11-19T00:00:00+00:00</published><updated>2021-11-19T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/11/19/jekyll-setup</id><content type="html" xml:base="https://kruemelmann.github.io/2021/11/19/jekyll-setup.html"><![CDATA[<p>In this article i would like to show you how to install the required tools to build this blog.</p>
+
+<blockquote>
+  <p>The installation process is obsolete if i am finished writing my jekyll bazel rule. Then you only need to have bazel installed but for now that is the way to build this jekyll page.</p>
+</blockquote>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>On MacOs you need to run be:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>xcode-select --install
+</pre></td>
+</tr></table>
+</div>
+
+<p>After this add the following line to your terminal configuration file (in my case ~/.zshrc):</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>export SDKROOT=$(xcrun --show-sdk-path)
+</pre></td>
+</tr></table>
+</div>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="ruby-installation-and-setup">Ruby installation and setup</h3>
+<ol>
+  <li>Install Ruby</li>
+</ol>
+
+<p>Use <a href="https://brew.sh">brew</a> to install ruby:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install ruby
+</pre></td>
+</tr></table>
+</div>
+<ol>
+  <li>Adding ruby and gems paths to the PATH variable</li>
+</ol>
+
+<p>In my case zsh:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>echo 'export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;' &gt;&gt; ~/.zshrc
+</pre></td>
+</tr></table>
+</div>
+<ol>
+  <li>(On mojave you need to have openssl installed)
+    <div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install openssl
+</pre></td>
+</tr></table>
+    </div>
+  </li>
+  <li>(on certain versions of MacOs you need to install the bundler and the jekyll gem by hand)
+Like the following:</li>
+</ol>
+
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>gem install bundler jekyll
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="golang-installation">golang installation</h3>
+
+<p>This project uses golang to play around with webassembly. So in order to get ide/editor support for the code you need go installed.
+(You only need it for your local tools if you only want to build the page you don’t need to install go since I use bazel to build this page)</p>
+
+<ol>
+  <li>Go to the download page of Golang
+<a href="https://go.dev/doc/install">Download page</a></li>
+</ol>
+
+<p>The installation is straight forward :) so just follow the instructions.</p>
+
+<h3 id="bazel-installation">bazel installation</h3>
+
+<p>In the future i want to use bazel as my main buildsystem but for now it can only build my go/webassembly part.
+For the management of the bazel version i use <a href="https://www.url.com">bazelisk</a>.
+bazelisk wrapps around bazel and manage its versions for you. (comparable to nvm in node)
+In the project you can find the bazelisk configuration file. So you only need to install it and it does all the rest for you.</p>
+
+<ol>
+  <li>Install bazelisk using brew
+    <div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install bazelisk
+</pre></td>
+</tr></table>
+    </div>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Now all tools you need are installed and you are able to work on this blog:) Lets have some fun… :)</p>]]></content><author><name></name></author><category term="jekyll" /><category term="golang" /><category term="bazel" /><summary type="html"><![CDATA[In this article i would like to show you how to install the required tools to build this blog.]]></summary></entry><entry><title type="html">welcome to my new blog :)</title><link href="https://kruemelmann.github.io/2021/11/18/welcome.html" rel="alternate" type="text/html" title="welcome to my new blog :)" /><published>2021-11-18T00:00:00+00:00</published><updated>2021-11-18T00:00:00+00:00</updated><id>https://kruemelmann.github.io/2021/11/18/welcome</id><content type="html" xml:base="https://kruemelmann.github.io/2021/11/18/welcome.html"><![CDATA[<p>In this blog i am going to write some stuff about my projects on github
+and document some ideas.</p>
+
+<h2 id="markdown">markdown</h2>
+
+<h3 id="headlines">headlines</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>## h2
+### h3
+#### h4
+##### h5
+###### h6
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="list">list</h3>
+
+<h4 id="ordered">ordered</h4>
+
+<ol>
+  <li>first
+    <ul>
+      <li>1.1</li>
+    </ul>
+  </li>
+  <li>second
+    <ol>
+      <li>second one</li>
+    </ol>
+  </li>
+  <li>third</li>
+</ol>
+
+<h4 id="unordered">unordered</h4>
+
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+
+<hr />
+
+<h3 id="links">links</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>[Text](https://www.url.com)
+[Text](https://www.url.com &quot;Link with Tilte&quot;)
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="images">images</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>![pic alt](path &quot;opt title&quot;)
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="tables">tables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: center">Description</th>
+      <th style="text-align: right">Test Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Header</td>
+      <td style="text-align: center">Title</td>
+      <td style="text-align: right">Here’s this</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Paragraph</td>
+      <td style="text-align: center">Text</td>
+      <td style="text-align: right">And more</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="table-of-contents">table of contents</h3>
+
+<h4 id="table-of-contents-1">Table of Contents</h4>
+<ol>
+  <li><a href="#example">Example</a></li>
+  <li><a href="#example2">Example2</a></li>
+  <li><a href="#third-example">Third Example</a></li>
+  <li><a href="#fourth-example">Fourth Example</a></li>
+</ol>
+
+<h5 id="example">Example</h5>
+<h5 id="example2">Example2</h5>
+<h5 id="third-example">Third Example</h5>
+<h5 id="fourth-example">Fourth Example</h5>
+
+<hr />
+
+<h3 id="horizontal-row">horizontal row</h3>
+
+<hr />
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+<hr />
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+<hr />
+
+<h3 id="codeblock">codeblock</h3>
+
+<p>Go</p>
+<div class="language-go highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">package</span> main
+
+<span style="color:#080;font-weight:bold">import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fmt</span><span style="color:#710">&quot;</span></span>
+
+<span style="color:#080;font-weight:bold">func</span> main(){
+    fmt.Printf(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello World</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>)
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Starlark</p>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre>load(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">@io_bazel_rules_go//go:def.bzl</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go_binary</span><span style="color:#710">&quot;</span></span>)
+go_binary(
+    name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wasm</span><span style="color:#710">&quot;</span></span>,
+    embed = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//src/wasm/go:go_lib</span><span style="color:#710">&quot;</span></span>],
+    goarch = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wasm</span><span style="color:#710">&quot;</span></span>,
+    goos = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">js</span><span style="color:#710">&quot;</span></span>,
+    visibility = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//visibility:public</span><span style="color:#710">&quot;</span></span>],
+)
+</pre></td>
+</tr></table>
+</div>
+
+<p>Grpc</p>
+<div class="language-proto highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre>syntax = &quot;proto3&quot;;
+
+option go_package = &quot;pkg/logs;logs&quot;;
+
+service HelloService {
+  rpc RouteChat(stream Message) returns (stream Message) {}
+}
+
+message Message {
+  string name = 1;
+}
+</pre></td>
+</tr></table>
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[In this blog i am going to write some stuff about my projects on github and document some ideas.]]></summary></entry></feed>

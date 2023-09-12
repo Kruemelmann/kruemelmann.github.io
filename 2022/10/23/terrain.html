@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>terrain generator</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+</head>
+
+    
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- own scripts -->
+
+<script src="/assets/js/routing.js"></script>
+<script src="/assets/js/cookie.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/filter.js"></script>
+<script src="/assets/js/scrolldown.js"></script>
+
+
+    <body>
+        <header>
+    <nav>
+    <div class="logo">
+        <a href="/">
+            kruemelmann
+        </a>
+    </div>
+    <ul class="navbar">
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/" >
+                    Home
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/projects.html" >
+                    Projects
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/publications.html" >
+                    Publications
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/blog.html" >
+                    Blog
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/about.html" >
+                    About
+                </a>
+            </li>
+        
+        
+            <li class="navbar-item sozials">
+                <a href="https://github.com/kruemelmann" target=”_blank”
+                    
+                       class="fa fa-github"
+                    
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://twitter.com/kruemlmann" target=”_blank”
+                    
+                    
+                       class="fa fa-twitter"
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://www.linkedin.com/in/lukas-ehlers-409480232/" target=”_blank”
+                    
+                    
+                    
+                       class="fa fa-linkedin"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+</header>
+
+        <div class="main-content page-body">
+            <h1>terrain generator</h1>
+            <h6>
+                23 October 2022
+            </h6>
+            <br>
+            
+                <p>In this Post I will show you how to build a ‘fly-over-terrain’ animation using perlin noise.</p>
+
+<h2 id="step-1-making-a-rectangle-grid">Step 1: Making a rectangle grid</h2>
+
+<p>For step one I just recycled the source code from my game of life playground post. <a href="/2022/01/05/gameoflife.html">Game of Life Playground</a></p>
+<div>
+    <input type="button" onclick="updateRes(10)" value="10" />
+    <input type="button" onclick="updateRes(50)" value="50" />
+    <input type="button" onclick="updateRes(100)" value="100" />
+    <canvas id="step1_canvas" width="1000" height="1000"></canvas>
+    <script src="/assets/js/posts/2022-10-23-terrain/terrain-step1.js"></script>
+</div>
+
+<h2 id="step-2-making-a-triangle-grid">Step 2: Making a triangle grid</h2>
+
+<div>
+    <input type="button" onclick="updateRes(10)" value="10" />
+    <input type="button" onclick="updateRes(50)" value="50" />
+    <input type="button" onclick="updateRes(100)" value="100" />
+    <canvas id="step2_canvas" width="1000" height="1000"></canvas>
+    <script src="/assets/js/posts/2022-10-23-terrain/terrain-step2.js"></script>
+</div>
+
+<script src="/assets/js/posts/2022-10-23-terrain/general.js"></script>
+
+
+            
+            
+        </div>
+    </body>
+    <footer>
+    <div class="foot-container">
+
+    </div>
+</footer>
+
+</html>

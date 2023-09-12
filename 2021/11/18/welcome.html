@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>welcome to my new blog :)</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+</head>
+
+    
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- own scripts -->
+
+<script src="/assets/js/routing.js"></script>
+<script src="/assets/js/cookie.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/filter.js"></script>
+<script src="/assets/js/scrolldown.js"></script>
+
+
+    <body>
+        <header>
+    <nav>
+    <div class="logo">
+        <a href="/">
+            kruemelmann
+        </a>
+    </div>
+    <ul class="navbar">
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/" >
+                    Home
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/projects.html" >
+                    Projects
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/publications.html" >
+                    Publications
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/blog.html" >
+                    Blog
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/about.html" >
+                    About
+                </a>
+            </li>
+        
+        
+            <li class="navbar-item sozials">
+                <a href="https://github.com/kruemelmann" target=”_blank”
+                    
+                       class="fa fa-github"
+                    
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://twitter.com/kruemlmann" target=”_blank”
+                    
+                    
+                       class="fa fa-twitter"
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://www.linkedin.com/in/lukas-ehlers-409480232/" target=”_blank”
+                    
+                    
+                    
+                       class="fa fa-linkedin"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+</header>
+
+        <div class="main-content page-body">
+            <h1>welcome to my new blog :)</h1>
+            <h6>
+                18 November 2021
+            </h6>
+            <br>
+            
+                <p>In this blog i am going to write some stuff about my projects on github
+and document some ideas.</p>
+
+<h2 id="markdown">markdown</h2>
+
+<h3 id="headlines">headlines</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>## h2
+### h3
+#### h4
+##### h5
+###### h6
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="list">list</h3>
+
+<h4 id="ordered">ordered</h4>
+
+<ol>
+  <li>first
+    <ul>
+      <li>1.1</li>
+    </ul>
+  </li>
+  <li>second
+    <ol>
+      <li>second one</li>
+    </ol>
+  </li>
+  <li>third</li>
+</ol>
+
+<h4 id="unordered">unordered</h4>
+
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+
+<hr />
+
+<h3 id="links">links</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>[Text](https://www.url.com)
+[Text](https://www.url.com &quot;Link with Tilte&quot;)
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="images">images</h3>
+
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>![pic alt](path &quot;opt title&quot;)
+</pre></td>
+</tr></table>
+</div>
+
+<hr />
+
+<h3 id="tables">tables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: center">Description</th>
+      <th style="text-align: right">Test Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Header</td>
+      <td style="text-align: center">Title</td>
+      <td style="text-align: right">Here’s this</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Paragraph</td>
+      <td style="text-align: center">Text</td>
+      <td style="text-align: right">And more</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="table-of-contents">table of contents</h3>
+
+<h4 id="table-of-contents-1">Table of Contents</h4>
+<ol>
+  <li><a href="#example">Example</a></li>
+  <li><a href="#example2">Example2</a></li>
+  <li><a href="#third-example">Third Example</a></li>
+  <li><a href="#fourth-example">Fourth Example</a></li>
+</ol>
+
+<h5 id="example">Example</h5>
+<h5 id="example2">Example2</h5>
+<h5 id="third-example">Third Example</h5>
+<h5 id="fourth-example">Fourth Example</h5>
+
+<hr />
+
+<h3 id="horizontal-row">horizontal row</h3>
+
+<hr />
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+<hr />
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+<hr />
+
+<h3 id="codeblock">codeblock</h3>
+
+<p>Go</p>
+<div class="language-go highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">package</span> main
+
+<span style="color:#080;font-weight:bold">import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fmt</span><span style="color:#710">&quot;</span></span>
+
+<span style="color:#080;font-weight:bold">func</span> main(){
+    fmt.Printf(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello World</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>)
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Starlark</p>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre>load(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">@io_bazel_rules_go//go:def.bzl</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">go_binary</span><span style="color:#710">&quot;</span></span>)
+go_binary(
+    name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wasm</span><span style="color:#710">&quot;</span></span>,
+    embed = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//src/wasm/go:go_lib</span><span style="color:#710">&quot;</span></span>],
+    goarch = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wasm</span><span style="color:#710">&quot;</span></span>,
+    goos = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">js</span><span style="color:#710">&quot;</span></span>,
+    visibility = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//visibility:public</span><span style="color:#710">&quot;</span></span>],
+)
+</pre></td>
+</tr></table>
+</div>
+
+<p>Grpc</p>
+<div class="language-proto highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre>syntax = &quot;proto3&quot;;
+
+option go_package = &quot;pkg/logs;logs&quot;;
+
+service HelloService {
+  rpc RouteChat(stream Message) returns (stream Message) {}
+}
+
+message Message {
+  string name = 1;
+}
+</pre></td>
+</tr></table>
+</div>
+
+            
+            
+        </div>
+    </body>
+    <footer>
+    <div class="foot-container">
+
+    </div>
+</footer>
+
+</html>

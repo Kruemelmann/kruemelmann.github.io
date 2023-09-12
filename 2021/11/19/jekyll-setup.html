@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>jekyll-setup</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+</head>
+
+    
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- own scripts -->
+
+<script src="/assets/js/routing.js"></script>
+<script src="/assets/js/cookie.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/filter.js"></script>
+<script src="/assets/js/scrolldown.js"></script>
+
+
+    <body>
+        <header>
+    <nav>
+    <div class="logo">
+        <a href="/">
+            kruemelmann
+        </a>
+    </div>
+    <ul class="navbar">
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/" >
+                    Home
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/projects.html" >
+                    Projects
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/publications.html" >
+                    Publications
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/blog.html" >
+                    Blog
+                </a>
+            </li>
+        
+            <li class="navbar-item navbar-item-hover">
+                <a href="/about.html" >
+                    About
+                </a>
+            </li>
+        
+        
+            <li class="navbar-item sozials">
+                <a href="https://github.com/kruemelmann" target=”_blank”
+                    
+                       class="fa fa-github"
+                    
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://twitter.com/kruemlmann" target=”_blank”
+                    
+                    
+                       class="fa fa-twitter"
+                    
+                    >
+                </a>
+            </li>
+        
+            <li class="navbar-item sozials">
+                <a href="https://www.linkedin.com/in/lukas-ehlers-409480232/" target=”_blank”
+                    
+                    
+                    
+                       class="fa fa-linkedin"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+</nav>
+
+</header>
+
+        <div class="main-content page-body">
+            <h1>jekyll-setup</h1>
+            <h6>
+                19 November 2021
+            </h6>
+            <br>
+            
+                <p>In this article i would like to show you how to install the required tools to build this blog.</p>
+
+<blockquote>
+  <p>The installation process is obsolete if i am finished writing my jekyll bazel rule. Then you only need to have bazel installed but for now that is the way to build this jekyll page.</p>
+</blockquote>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>On MacOs you need to run be:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>xcode-select --install
+</pre></td>
+</tr></table>
+</div>
+
+<p>After this add the following line to your terminal configuration file (in my case ~/.zshrc):</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>export SDKROOT=$(xcrun --show-sdk-path)
+</pre></td>
+</tr></table>
+</div>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="ruby-installation-and-setup">Ruby installation and setup</h3>
+<ol>
+  <li>Install Ruby</li>
+</ol>
+
+<p>Use <a href="https://brew.sh">brew</a> to install ruby:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install ruby
+</pre></td>
+</tr></table>
+</div>
+<ol>
+  <li>Adding ruby and gems paths to the PATH variable</li>
+</ol>
+
+<p>In my case zsh:</p>
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>echo 'export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH&quot;' &gt;&gt; ~/.zshrc
+</pre></td>
+</tr></table>
+</div>
+<ol>
+  <li>(On mojave you need to have openssl installed)
+    <div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install openssl
+</pre></td>
+</tr></table>
+    </div>
+  </li>
+  <li>(on certain versions of MacOs you need to install the bundler and the jekyll gem by hand)
+Like the following:</li>
+</ol>
+
+<div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>gem install bundler jekyll
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="golang-installation">golang installation</h3>
+
+<p>This project uses golang to play around with webassembly. So in order to get ide/editor support for the code you need go installed.
+(You only need it for your local tools if you only want to build the page you don’t need to install go since I use bazel to build this page)</p>
+
+<ol>
+  <li>Go to the download page of Golang
+<a href="https://go.dev/doc/install">Download page</a></li>
+</ol>
+
+<p>The installation is straight forward :) so just follow the instructions.</p>
+
+<h3 id="bazel-installation">bazel installation</h3>
+
+<p>In the future i want to use bazel as my main buildsystem but for now it can only build my go/webassembly part.
+For the management of the bazel version i use <a href="https://www.url.com">bazelisk</a>.
+bazelisk wrapps around bazel and manage its versions for you. (comparable to nvm in node)
+In the project you can find the bazelisk configuration file. So you only need to install it and it does all the rest for you.</p>
+
+<ol>
+  <li>Install bazelisk using brew
+    <div class="language-bash highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>brew install bazelisk
+</pre></td>
+</tr></table>
+    </div>
+  </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Now all tools you need are installed and you are able to work on this blog:) Lets have some fun… :)</p>
+
+
+            
+            
+        </div>
+    </body>
+    <footer>
+    <div class="foot-container">
+
+    </div>
+</footer>
+
+</html>
