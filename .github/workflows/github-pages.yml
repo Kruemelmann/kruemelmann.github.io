@@ -54,7 +54,7 @@ jobs:
           go-version: '^1.17.1'
       - run: go version
       - name: build go to wasm
-        run: GOOS=js GOARCH=wasm go build -o ./assets/wasm/game.wasm ./src/wasm/go/
+        run: GOOS=js GOARCH=wasm go build -o ./static/wasm/dist/mandel.wasm ./static/wasm/go/mandel/
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
