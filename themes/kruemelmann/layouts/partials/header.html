@@ -1,0 +1,15 @@
+<div id="nav-border" class="container">
+    <nav id="nav">
+        <div class="logo">
+            <a href="/">kruemelmann</a>
+        </div>
+        <div id="navbar">
+            {{ range .Site.Menus.main }}
+            <a class="nav-link nav-item nav-item-hover" href="{{ .URL }}">
+                {{ $text := print .Name | safeHTML }}
+                {{ $text }}
+            </a>
+            {{ end }}
+        </div>
+    </nav>
+</div>
