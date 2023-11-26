@@ -61,6 +61,7 @@ main {
 
 .nav-item-hover:hover {
     background-color: #202020;
+    color: #04b976;
     border-radius: 10px;
 }
 
@@ -104,6 +105,10 @@ footer {
     text-decoration: none;
     font-size: 2.0rem;
     color: #fff;
+}
+
+.social_list_item_link:hover {
+    color: #04b976;
 }
 
 .copyright_banner {
