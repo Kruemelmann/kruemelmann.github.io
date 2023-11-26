@@ -16,15 +16,6 @@ main {
     border-radius: 25px;
     background: #121212;
 }
-footer{
-    height: 2rem;
-    position: relative;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    background: black;
-    text-align: center;
-}
 
 /*navbar*/
 #nav-border {
@@ -86,4 +77,35 @@ footer{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
 }
 
+footer {
+    min-height: 100px;
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: black;
+    text-align: center;
+}
 
+.social_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social_list_item {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+.social_list_item_link {
+    text-decoration: none;
+    font-size: 2.0rem;
+    color: #fff;
+}
+
+.copyright_banner {
+    margin: 0px;
+}

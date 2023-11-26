@@ -1,4 +1,34 @@
-<span id="social">
-
-
-</span>
+<div id="social">
+        <ul class="social_list">
+                <!-- Twitter -->
+                <li class="social_list_item">
+                        <a class="social_list_item_link" href="https://twitter.com/{{ .Site.Author.twitter }}" target="_blank">
+                                {{ $context := dict
+                                "vendor" "simple-icons"
+                                "name" "twitter"
+                                }}
+                                {{ partial "icons/icon" $context }}
+                        </a>
+                </li>
+                <!-- github -->
+                <li class="social_list_item">
+                        <a class="social_list_item_link" href="https://github.com/{{ .Site.Author.github }}" target="_blank">
+                                {{ $context := dict
+                                "vendor" "simple-icons"
+                                "name" "github"
+                                }}
+                                {{ partial "icons/icon" $context }}
+                        </a>
+                </li>
+                <!-- linkedin -->
+                <li class="social_list_item">
+                        <a class="social_list_item_link" href="https://www.linkedin.com/in/{{ .Site.Author.linkedin }}" target="_blank">
+                                {{ $context := dict
+                                "vendor" "simple-icons"
+                                "name" "linkedin"
+                                }}
+                                {{ partial "icons/icon" $context }}
+                        </a>
+                </li>
+        </ul>
+</div>
