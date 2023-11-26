@@ -6,4 +6,49 @@
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
 
+    <script>
+        function kruemelincludeHTML() {
+            var custom_htmlattr = "kruemel-include-html"
+            var z, i, elmnt, file, xhttp;
+            /* List of all elements in DOM*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for custom_htmlattr */
+                file = elmnt.getAttribute(custom_htmlattr);
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                setInnerHTML(elmnt, this.responseText)
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            elmnt.removeAttribute(custom_htmlattr);
+                            kruemelincludeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+
+        function setInnerHTML(elm, html) {
+            elm.innerHTML = html;
+
+            Array.from(elm.querySelectorAll("script"))
+                .forEach( oldScriptEl => {
+                    const newScriptEl = document.createElement("script");
+                    Array.from(oldScriptEl.attributes).forEach( attr => {
+                        newScriptEl.setAttribute(attr.name, attr.value)
+                    });
+                    newScriptEl.appendChild(document.createTextNode(oldScriptEl.innerHTML));
+                    oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+                });
+        }
+    </script>
 </head>

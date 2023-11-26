@@ -10,6 +10,9 @@ theme = "kruemelmann"
   twitter = "kruemlmann"
   linkedin = "lukas-ehlers-409480232"
 
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
+
 [menu]
   [[menu.main]]
     name = "Home"

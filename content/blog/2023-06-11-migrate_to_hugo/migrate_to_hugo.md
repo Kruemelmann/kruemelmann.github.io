@@ -1,6 +1,6 @@
 ---
 title: "Migrate to hugo"
-date: 2023-06-11T05:21:24+02:00
+date: 2023-06-11
 draft: false
 tags: ["foo", "bar"]
 ---
