@@ -7,7 +7,7 @@ tags: ["web"]
 
 
 In the last few weeks I had many issues and problems to inlcude html into this blog posts.
-I was looking for a clean way to do it than in my last blog and so I came up with the following idears.
+I was looking for a cleaner way to do it than in my last blog and so I came up with the following idea.
 
 
 ## Step 1. Find the html
