@@ -75,7 +75,7 @@ So if we just add them to innerHTML they are rendered in the DOM but not execute
 
 
 
-## Step 3 Solve the problem with <script>-Tags
+## Step 3 Solve the problem with script-Tags
 
 After countless hours of fiddeling around I found a solution to the problem.
 The following code is a modifyed version of the first code.
