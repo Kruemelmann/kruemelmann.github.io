@@ -11,5 +11,12 @@
             </a>
             {{ end }}
         </div>
+        <button onclick="_topFunction()" id="nav-scrollup">
+            {{ $context := dict
+            "vendor" "bootstrap"
+            "name" "arrow-up"
+            }}
+            {{ partial "icons/icon" $context }}
+        </button>
     </nav>
 </div>

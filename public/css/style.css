@@ -123,14 +123,14 @@ footer {
   z-index: 99;
   border: none;
   outline: none;
+  background-color: red;
   color: white;
   cursor: pointer;
   padding: 15px;
+  border-radius: 10px;
   font-size: 18px;
-  background-color: #555;
-  border-radius: 15px;
 }
 
 #nav-scrollup:hover {
-  background-color: #04b976;
+  background-color: #555;
 }
