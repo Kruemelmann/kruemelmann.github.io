@@ -7,7 +7,6 @@ theme = "kruemelmann"
   name = "Lukas"
   website = "kruemelmann.github.io"
   github = "kruemelmann"
-  twitter = "kruemlmann"
   linkedin = "lukas-ehlers-409480232"
 
 [markup.goldmark.renderer]
