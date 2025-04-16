@@ -36,14 +36,6 @@ jobs:
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
     steps:
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - uses: actions/setup-go@v4
-        with:
-          go-version: '^1.17.1'
-      - run: go version
-      - name: build go to wasm
-        run: cd static/wasm/ && GOOS=js GOARCH=wasm go build -o ./dist/mandel.wasm ./go/mandel/
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
@@ -55,6 +47,14 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '^1.17.1'
+      - run: go version
+      - name: build go to wasm
+        run: cd static/wasm/ && GOOS=js GOARCH=wasm go build -o ./dist/mandel.wasm ./go/mandel/
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
