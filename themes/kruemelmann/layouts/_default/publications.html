@@ -1,0 +1,127 @@
+{{ define "main" }}
+  <div class="container">
+    <h1 style="text-align:left;">Publications</h1>
+
+    <!-- Search bar -->
+    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+      <input
+        id="search"
+        type="text"
+        placeholder="Search..."
+        style="
+        width: 50%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background-color: #2e2e2e;
+        color: white;
+        ">
+    </div>
+
+
+    <!-- Keyword filter -->
+    <div id="keywords" style="margin-bottom: 20px;"></div>
+
+    <!-- Publications list -->
+    <div id="papers">
+      {{ $papers := .Site.Data.publications.papers }}
+      {{ range $i, $p := $papers }}
+        <div class="paper"
+             style="margin: 0 auto; padding-left: 10%;"
+             data-title="{{ $p.title }}"
+             data-abstract="{{ $p.abstract }}"
+             data-keywords="{{ delimit $p.index_terms " " }}">
+          <a href="{{ $p.link }}" target="_blank"><h3>{{ $p.title }}</h3></a>
+          <p><strong>Keywords:</strong> {{ delimit $p.index_terms ", " }}</p>
+          {{ $lines := split $p.abstract "\n" }}
+          <p>{{ delimit (first 3 $lines) " " | truncate 200 }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- JavaScript for filtering -->
+  <script>
+    const searchInput = document.getElementById('search');
+    const papers = document.querySelectorAll('.paper');
+    const keywordContainer = document.getElementById('keywords');
+
+    // Collect all keywords
+    const allKeywords = new Set();
+    papers.forEach(p => {
+      p.dataset.keywords.split(' ').forEach(k => allKeywords.add(k));
+    });
+
+    const activeKeywords = new Set();
+
+    // Display keyword buttons
+    allKeywords.forEach(keyword => {
+      const btn = document.createElement('button');
+      btn.innerText = keyword;
+      btn.style.margin = "5px";
+      btn.style.padding = "8px 16px";
+      btn.style.border = "1px solid transparent";
+      btn.style.borderRadius = "8px";
+      btn.style.backgroundColor = "#3a3a3a";
+      btn.style.color = "white";
+      btn.style.cursor = "pointer";
+      btn.style.transition = "all 0.2s";
+
+      // Hover
+      btn.onmouseenter = () => {
+        if (!activeKeywords.has(keyword)) {
+          btn.style.backgroundColor = "#505050";
+        }
+      };
+      btn.onmouseleave = () => {
+        if (!activeKeywords.has(keyword)) {
+          btn.style.backgroundColor = "#3a3a3a";
+          btn.style.borderColor = "transparent";
+        }
+      };
+
+      // Toggle active keyword
+      btn.onclick = () => {
+        if (activeKeywords.has(keyword)) {
+          activeKeywords.delete(keyword);
+          btn.style.backgroundColor = "#3a3a3a";
+          btn.style.borderColor = "transparent";
+        } else {
+          activeKeywords.add(keyword);
+          btn.style.backgroundColor = "#606060";
+          btn.style.borderColor = "#888";
+        }
+
+        filterPapers();
+      };
+
+      keywordContainer.appendChild(btn);
+    });
+
+    // Filtering function (keywords + search combined)
+    function filterPapers() {
+      const searchValue = searchInput.value.toLowerCase();
+
+      papers.forEach(p => {
+        const title = p.dataset.title.toLowerCase();
+        const abstract = p.dataset.abstract.toLowerCase();
+        const keywords = p.dataset.keywords.split(" ");
+
+        const matchesSearch = title.includes(searchValue) || abstract.includes(searchValue);
+        const matchesKeywords = [...activeKeywords].every(k => keywords.includes(k));
+
+        if (matchesSearch && matchesKeywords) {
+          p.style.display = "block";
+        } else {
+          p.style.display = "none";
+        }
+      });
+    }
+
+    // Filter on text input as well
+    searchInput.addEventListener('input', filterPapers);
+
+  </script>
+{{ end }}
+

@@ -1,0 +1,22 @@
+papers:
+  - title: "Model simulation of an orbit with an internally moving mass"
+    abstract: >
+      TODO :D
+    index_terms:
+      - space
+      - simulation
+      - satellite
+    link: "https://github.com/Kruemelmann/paper_space_moving_masses/blob/main/tex/IEEE-conference-template-062824.pdf"
+  - title: "dummy paper Titel 2"
+    abstract: >
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+    index_terms:
+      - go
+    link: ""
+  - title: "dummy paper Titel 3"
+    abstract: >
+      Duis aute irure dolor in reprehenderit in voluptate velit esse.
+    index_terms:
+      - space
+    link: ""
+
